@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howard - Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="background-selector">
+        <label for="bg-select">Cambiar fondo:</label>
+        <select id="bg-select">
+            <option value="1">Fondo Clásico Howard</option>
+            <option value="2">Biblioteca Vintage</option>
+            <option value="3">Aurora Mágica</option>
+            <option value="4">Estrellas Nocturnas</option>
+            <option value="5">Pergamino Antiguo</option>
+        </select>
+    </div>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Hogwarts-Crest.png" alt="Escudo Howard"
+                class="logo">
+            <h1>HOWARTS</h1>
+            <h2>Institute of Magic and Science</h2>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="countdown-section">
+            <div class="section-title">
+                <h2>Próxima Ceremonia de Admisión</h2>
+                <p>19 de Marzo, 2026</p>
+            </div>
+
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">DÍAS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">HORAS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">MINUTOS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-box">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">SEGUNDOS</span>
+                </div>
+            </div>
+
+            <div class="countdown-message">
+                <p>Faltan <span id="countdown-text"></span> para la gran sorpresa</p>
+                <p class="special-message">¡Felicidades Ximena Garcia Mendienta, haz sido seleccionada!</p>
+
+                <div class="acceptance-message">
+                    <p>¡Felicidades, Ximena García Mendieta!</p>
+                    <p>Nos complace informarte que has sido oficialmente seleccionada para formar parte del Hogwarts –
+                        Institute of Magic and Science</p>
+                    <p>Tras una cuidadosa observación de tu esencia, tu carácter y tu extraordinaria capacidad para ver
+                        el mundo con sensibilidad y valentía, el Consejo de Magia ha determinado que posees las
+                        cualidades necesarias para emprender este camino.</p>
+                    <p>A partir de ahora, las puertas de nuestro instituto se abren para ti, donde el conocimiento y la
+                        magia caminan juntos, y donde cada estudiante escribe su propia historia.</p>
+                    <p>Tu carta ha llegado tal como estaba destinada a hacerlo. La magia siempre encuentra a quienes
+                        creen en ella.</p>
+                    <p>Te esperamos con honor y orgullo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="letters-section">
+            <div class="section-title">
+                <h2>Cartas de Aceptación</h2>
+                <p>Regalos especiales que se desbloquearán en fechas específicas</p>
+            </div>
+
+            <div class="letters-container">
+
+                <!-- CARTA 1 -->
+                <div class="letter-card" id="letter1">
+                    <div class="letter-seal sealed"><i class="fas fa-lock"></i></div>
+                    <div class="letter-content">
+                        <h3>Carta #1</h3>
+                        <p class="letter-date">Disponible: 14 de Febrero, 2026</p>
+                        <p class="letter-status" id="status1">BLOQUEADA</p>
+                        <div class="countdown-small" id="countdown1"></div>
+                        <p class="letter-description">
+                            Inicio del programa especial del Howarts Institute.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARTA 2 -->
+                <div class="letter-card" id="letter2">
+                    <div class="letter-seal sealed"><i class="fas fa-lock"></i></div>
+                    <div class="letter-content">
+                        <h3>Carta #2</h3>
+                        <p class="letter-date">Disponible: 14 de Marzo, 2026</p>
+                        <p class="letter-status" id="status2">BLOQUEADA</p>
+                        <div class="countdown-small" id="countdown2"></div>
+                        <p class="letter-description">
+                            Confirmación de permanencia en el programa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARTA 3 -->
+                <div class="letter-card" id="letter3">
+                    <div class="letter-seal sealed"><i class="fas fa-lock"></i></div>
+                    <div class="letter-content">
+                        <h3>Carta #3</h3>
+                        <p class="letter-date">Disponible: 14 de Abril, 2026</p>
+                        <p class="letter-status" id="status3">BLOQUEADA</p>
+                        <div class="countdown-small" id="countdown3"></div>
+                        <p class="letter-description">
+                            Notificación estacional del Howarts Institute.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARTA 4 (INGRESO OFICIAL) -->
+                <div class="letter-card" id="letter4">
+                    <div class="letter-seal sealed"><i class="fas fa-lock"></i></div>
+                    <div class="letter-content">
+                        <h3>Carta #4</h3>
+                        <p class="letter-date">Disponible: 14 de Mayo, 2026</p>
+                        <p class="letter-status" id="status4">BLOQUEADA</p>
+                        <div class="countdown-small" id="countdown4"></div>
+                        <p class="letter-description">
+                            Carta oficial de ingreso al Howarts Institute.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARTA 5 (CUMPLEAÑOS) -->
+                <div class="letter-card birthday" id="letter5">
+                    <div class="letter-seal sealed"><i class="fas fa-gift"></i></div>
+                    <div class="letter-content">
+                        <h3>Carta Especial 🎂</h3>
+                        <p class="letter-date">Disponible: 19 de Mayo, 2026</p>
+                        <p class="letter-status" id="status5">BLOQUEADA</p>
+                        <div class="countdown-small" id="countdown5"></div>
+                        <p class="letter-description">
+                            Celebración de cumpleaños y decreto especial del Instituto.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="instructions">
+            <h3>Instrucciones</h3>
+            <p>Cada carta representa un regalo que recibirás en la fecha indicada. Cuando llegue la fecha, la carta se
+                desbloqueará y podrás descubrir qué regalo especial te espera. El contador principal muestra el tiempo
+                restante para tu gran día de cumpleaños.</p>
+            <p><strong>Fecha de ingreso:</strong> <span id="current-date"></span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Howard Institute • Departamento de Sorpresas y Magia Especial</p>
+        <p>© 2026 - Todos los derechos reservados</p>
+    </footer>
+
+    <div class="modal" id="letterModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Carta de Aceptación</h2>
+                <p id="modal-subtitle">Howarts Institute</p>
+            </div>
+            <div class="modal-body">
+                <div id="modal-letter-content">
+                    <!-- El contenido de la carta se cargará aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

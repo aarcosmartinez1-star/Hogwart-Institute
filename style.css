@@ -1,0 +1,887 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    background-color: #0a1929;
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 41, 0.85);
+    z-index: -1;
+}
+
+/* Selector de fondo */
+#background-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 12px 18px;
+    border-radius: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    border: 1px solid #8a6d3b;
+    backdrop-filter: blur(5px);
+}
+
+#bg-select {
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 2px solid #8a6d3b;
+    background-color: #f9f5eb;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#bg-select:hover {
+    background-color: #f0e6d3;
+    box-shadow: 0 0 8px rgba(138, 109, 59, 0.3);
+}
+
+/* Encabezado */
+.main-header {
+    text-align: center;
+    padding: 50px 20px 40px;
+    background: linear-gradient(to bottom, rgba(10, 25, 41, 0.95) 0%, rgba(10, 25, 41, 0.7) 100%);
+    border-bottom: 4px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/old-wall.png');
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 130px;
+    height: 150px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7)) brightness(1.1);
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #f0d9a3;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #8a6d3b, transparent);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #d4c19c;
+    letter-spacing: 3px;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenido principal */
+.content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(212, 193, 156, 0.4);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 40%;
+    width: 20%;
+    height: 4px;
+    background: linear-gradient(to right, #8a6d3b, #f0d9a3, #8a6d3b);
+    border-radius: 2px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #f0d9a3;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(240, 217, 163, 0.3);
+}
+
+.section-title p {
+    color: #d4c19c;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Contador principal */
+.countdown-section {
+    background-color: rgba(26, 43, 62, 0.85);
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 2px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    min-width: 140px;
+    padding: 20px 15px;
+    background: rgba(20, 35, 50, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 193, 156, 0.3);
+    transition: all 0.3s ease;
+}
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(25, 40, 55, 0.7);
+    border-color: #8a6d3b;
+}
+
+.countdown-number {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #f0d9a3;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.countdown-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #d4c19c;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.countdown-separator {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: #f0d9a3;
+    margin: 0 10px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+.countdown-message {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(212, 193, 156, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.countdown-message p {
+    font-size: 1.5rem;
+    color: #d4c19c;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.special-message {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem !important;
+    color: #f0d9a3 !important;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    margin-top: 20px !important;
+    margin-bottom: 30px !important;
+    padding: 15px 30px;
+    background: rgba(138, 109, 59, 0.2);
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid rgba(240, 217, 163, 0.3);
+}
+
+/* Mensaje de aceptación */
+.acceptance-message {
+    background: linear-gradient(145deg, rgba(249, 245, 235, 0.95), rgba(240, 233, 218, 0.9));
+    border-radius: 15px;
+    padding: 35px;
+    margin-top: 40px;
+    border-left: 8px solid #8a6d3b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+    border-right: 1px solid rgba(138, 109, 59, 0.3);
+    border-top: 1px solid rgba(138, 109, 59, 0.1);
+    border-bottom: 1px solid rgba(138, 109, 59, 0.1);
+}
+
+.acceptance-message::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2721/2721264.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+}
+
+.acceptance-message p {
+    color: #3a2c0e;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: 1.15rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.acceptance-message p:first-child {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    color: #8a6d3b;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(138, 109, 59, 0.3);
+    padding-bottom: 15px;
+}
+
+.acceptance-message p:last-child {
+    font-style: italic;
+    text-align: center;
+    margin-top: 25px;
+    color: #5a4a1e;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-top: 15px;
+    border-top: 1px solid rgba(138, 109, 59, 0.2);
+}
+
+/* Cartas */
+.letters-section {
+    background-color: rgba(26, 43, 62, 0.85);
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 2px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.letters-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.letters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-card {
+    background: linear-gradient(145deg, rgba(249, 245, 235, 0.97), rgba(242, 237, 225, 0.95));
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    border: 2px solid #d4c19c;
+    cursor: pointer;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.letter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.letter-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: #8a6d3b;
+}
+
+.letter-card.unlocked {
+    border-color: #8a6d3b;
+    background: linear-gradient(145deg, rgba(255, 253, 247, 0.98), rgba(250, 247, 237, 0.96));
+    box-shadow: 0 10px 30px rgba(138, 109, 59, 0.3);
+}
+
+.letter-card.unlocked .letter-seal {
+    background: radial-gradient(circle at 30% 30%, #8a6d3b, #5a4a1e);
+    transform: rotate(15deg);
+}
+
+.letter-card.unlocked .letter-seal i {
+    display: none;
+}
+
+.letter-card.unlocked .letter-seal::after {
+    content: "✓";
+    font-size: 1.8rem;
+    color: #f0d9a3;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.letter-seal {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 65px;
+    height: 65px;
+    background: radial-gradient(circle at 30% 30%, #5a5a5a, #3a3a3a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.letter-seal i {
+    color: #f0d9a3;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.letter-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-content h3 {
+    font-family: 'Cinzel', serif;
+    color: #8a6d3b;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d4c19c;
+    padding-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.letter-date {
+    color: #7a6b4a;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: center;
+    background: rgba(138, 109, 59, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(138, 109, 59, 0.2);
+}
+
+.letter-status {
+    font-family: 'Cinzel', serif;
+    font-weight: 800;
+    color: #a94442;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(169, 68, 66, 0.1);
+    border: 1px solid rgba(169, 68, 66, 0.2);
+}
+
+.letter-card.unlocked .letter-status {
+    color: #3c763d;
+    background: rgba(60, 118, 61, 0.1);
+    border-color: rgba(60, 118, 61, 0.2);
+}
+
+.countdown-small {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(to right, rgba(138, 109, 59, 0.15), rgba(212, 193, 156, 0.1));
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #8a6d3b;
+    font-weight: 700;
+    border: 1px solid rgba(138, 109, 59, 0.3);
+    letter-spacing: 1px;
+}
+
+.letter-description {
+    color: #5a523e;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(138, 109, 59, 0.2);
+    font-style: italic;
+}
+
+/* Instrucciones */
+.instructions {
+    background-color: rgba(26, 43, 62, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 2px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.instructions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/light-wool.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.instructions h3 {
+    font-family: 'Cinzel', serif;
+    color: #f0d9a3;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px rgba(240, 217, 163, 0.3);
+}
+
+.instructions p {
+    color: #d4c19c;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+}
+
+.instructions strong {
+    color: #f0d9a3;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(10, 25, 41, 0.95);
+    border-top: 3px solid #8a6d3b;
+    color: #d4c19c;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+footer p {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 1px;
+}
+
+footer p:first-child {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: #f0d9a3;
+    font-weight: 600;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow: auto;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #f9f5eb, #f0e6d3);
+    margin: 5% auto;
+    padding: 0;
+    width: 85%;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    border: 4px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #8a6d3b;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    background: rgba(249, 245, 235, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #5a4a1e;
+    background: rgba(240, 233, 218, 0.9);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    background: linear-gradient(to right, #1a2b3e, #2a3b4e);
+    padding: 30px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-bottom: 3px solid #8a6d3b;
+}
+
+.modal-header h2 {
+    color: #f0d9a3;
+    font-family: 'Cinzel', serif;
+    font-size: 2.3rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.modal-header p {
+    color: #d4c19c;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.modal-body {
+    padding: 40px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.7;
+    color: #3a2c0e;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-body h3 {
+    color: #8a6d3b;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    border-bottom: 2px solid rgba(138, 109, 59, 0.3);
+    padding-bottom: 15px;
+}
+
+.modal-body p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .countdown-box {
+        min-width: 120px;
+        margin: 10px;
+        padding: 15px 10px;
+    }
+    
+    .countdown-number {
+        font-size: 4rem;
+    }
+    
+    .countdown-label {
+        font-size: 1.2rem;
+    }
+    
+    .countdown-separator {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-container {
+        margin: 30px 0;
+    }
+    
+    .countdown-box {
+        min-width: 90px;
+        margin: 8px;
+        padding: 12px 8px;
+    }
+    
+    .countdown-number {
+        font-size: 3rem;
+    }
+    
+    .countdown-label {
+        font-size: 1rem;
+    }
+    
+    .countdown-separator {
+        font-size: 2.2rem;
+        margin: 0 5px;
+    }
+    
+    .special-message {
+        font-size: 1.6rem !important;
+        padding: 12px 20px;
+    }
+    
+    .letters-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .letter-card {
+        min-height: 300px;
+    }
+    
+    #background-selector {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        top: 15px;
+        right: 15px;
+        max-width: 180px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.9rem;
+    }
+    
+    .countdown-section, .letters-section, .instructions {
+        padding: 30px;
+    }
+    
+    .acceptance-message {
+        padding: 25px;
+    }
+    
+    .acceptance-message p {
+        font-size: 1.05rem;
+    }
+    
+    .acceptance-message p:first-child {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    
+    h2 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 120px;
+    }
+    
+    .countdown-box {
+        min-width: 70px;
+        margin: 5px;
+    }
+    
+    .countdown-number {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-separator {
+        font-size: 1.8rem;
+    }
+    
+    .special-message {
+        font-size: 1.3rem !important;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-body {
+        padding: 25px;
+    }
+}
