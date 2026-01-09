@@ -198,51 +198,74 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
 
         const letterSubtitles = [
-            "Howard Institute - Departamento de Regalos Especiales",
-            "Howard Institute - Departamento de Sorpresas Continuas",
-            "Howard Institute - Departamento de Alegría Primaveral",
-            "Howard Institute - Departamento de Celebración y Magia",
-            "Howard Institute - Departamento de Sorpresas Continuas"
+            "HOGWARTS - Departamento de Regalos Especiales",
+            "HOGWARTS - Departamento de Sorpresas Continuas",
+            "HOGWARTS - Departamento de Alegría Primaveral",
+            "HOGWARTS - Departamento de Celebración y Magia",
+            "HOGWARTS - Departamento de Sorpresas Continuas"
         ];
 
         const letterContents = [
 
             /* ===================== CARTA 1 – 14 FEBRERO ===================== */
             `
-<h3>¡Feliz Día del Amor y la Amistad!</h3>
+<h3>¡Feliz Día de San Valentín!</h3>
 
 <p>
 El Consejo Académico del
-<strong>Howard Institute – Instituto de Magia y Ciencias</strong>
+<strong>HOGWARTS - Academy of Magic and Science</strong>
 se complace en informarte que has sido oficialmente aceptada
 en el programa especial:
 </p>
 
 <p style="text-align:center; font-weight:bold; font-size:1.1em;">
-“El Arte de Amar y Ser Amado”
+"El Arte de Amar y Ser Amado"
 </p>
 
-<p>
-Este selecto programa está reservado únicamente para quienes
-poseen una magia excepcional en el corazón y la capacidad
-de amar de forma genuina y profunda.
-</p>
+<div style="background: linear-gradient(to right, #0e1a40, #222f5b); 
+            color: #b0b0b0; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin: 20px 0;
+            border-left: 5px solid #946b2d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <p style="text-align:center; font-weight:bold; color:#d4af37; margin-bottom:10px;">
+        🦅 <strong>NOTA ESPECIAL DEL SOMBRERO SELECCIONADOR</strong> 🦅
+    </p>
+    <p style="font-style:italic; text-align:center;">
+        "Tras una cuidadosa deliberación, he determinado que tu mente ágil, 
+        tu sabiduría natural y tu curiosidad infinita te convierten en una 
+        verdadera <strong>Ravenclaw</strong>. Tu corazón ama con la misma 
+        intensidad con la que tu mente busca conocimiento. ¡Bienvenida a 
+        la casa de la sabiduría y la creatividad!"
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <span style="color:#946b2d; font-weight:bold;">«Inteligencia más allá de la medida es el mayor tesoro del hombre»</span>
+    </div>
+</div>
 
 <p>
 Como símbolo de tu ingreso, se autoriza la entrega de tu
 <strong>primer obsequio</strong>, marcando el inicio de una serie
-de celebraciones guiadas por las antiguas tradiciones del Instituto.
+de celebraciones guiadas por las antiguas tradiciones de la Academia.
 </p>
 
 <p>
 Recuerda siempre: la magia más poderosa no se aprende en libros,
-sino que nace del amor verdadero.
+sino que nace del amor verdadero y la sabiduría del corazón.
 </p>
 
 <p style="margin-top:20px;">
 Atentamente,<br>
-🪄 <strong>Rectorado del Howard Institute</strong>
+🪄 <strong>Rectorado del HOGWARTS - Academy of Magic and Science</strong><br>
+<span style="color:#0e1a40; font-weight:bold;">Casa Ravenclaw</span>
 </p>
+
+<div style="text-align:center; margin-top:15px;">
+    <span style="color:#946b2d; font-size:0.9em; font-style:italic;">
+        *Tu carta de aceptación a Ravenclaw será entregada junto con tu primer obsequio*
+    </span>
+</div>
 `,
 
             /* ===================== CARTA 2 – 14 MARZO ===================== */
@@ -250,12 +273,12 @@ Atentamente,<br>
 <h3>Comunicado Académico Oficial</h3>
 
 <p>
-El <strong>Howard Institute – Instituto de Magia y Ciencias</strong>
+El <strong>HOGWARTS - Academy of Magic and Science</strong>
 confirma tu permanencia y desempeño sobresaliente dentro del programa:
 </p>
 
 <p style="text-align:center; font-weight:bold; font-size:1.1em;">
-“Magia Mensual de Sorpresas”
+"Magia Mensual de Sorpresas"
 </p>
 
 <p>
@@ -272,22 +295,22 @@ habita en cada día, no solo en fechas señaladas.
 
 <p style="margin-top:20px;">
 Atentamente,<br>
-🪄 <strong>Rectorado del Howard Institute</strong>
+🪄 <strong>Rectorado del HOGWARTS - Academy of Magic and Science</strong>
 </p>
 `,
 
             /* ===================== CARTA 3 – 14 ABRIL ===================== */
             `
-<h3>Notificación Estacional del Instituto</h3>
+<h3>Notificación Estacional de la Academia</h3>
 
 <p>
 Con la llegada de la primavera, el
-<strong>Howard Institute – Instituto de Magia y Ciencias</strong>
+<strong>HOGWARTS - Academy of Magic and Science</strong>
 anuncia tu aceptación dentro del programa:
 </p>
 
 <p style="text-align:center; font-weight:bold; font-size:1.1em;">
-“Alegría Floreciente de Primavera”
+"Alegría Floreciente de Primavera"
 </p>
 
 <p>
@@ -305,17 +328,17 @@ la esperanza y el amor que se fortalece con el tiempo.
 
 <p style="margin-top:20px;">
 Atentamente,<br>
-🪄 <strong>Rectorado del Howard Institute</strong>
+🪄 <strong>Rectorado del HOGWARTS - Academy of Magic and Science</strong>
 </p>
 `,
 
             /* ===================== CARTA 4 – 14 MAYO (VARITA DE SAÚCO) ===================== */
             `
-<h3>Decreto Supremo del Consejo del Instituto</h3>
+<h3>Decreto Supremo del Consejo de la Academia</h3>
 
 <p>
 En una sesión solemne, el
-<strong>Howard Institute – Instituto de Magia y Ciencias</strong>
+<strong>HOGWARTS - Academy of Magic and Science</strong>
 otorga un honor reservado únicamente para
 magos y brujas de corazón excepcional:
 </p>
@@ -339,22 +362,22 @@ de protección, sabiduría y lealtad eterna.
 
 <p style="margin-top:30px; text-align:center; font-weight:bold;">
 Con honor absoluto,<br>
-🪄 Consejo Supremo del Howard Institute
+🪄 Consejo Supremo del HOGWARTS - Academy of Magic and Science
 </p>
 `,
 
             /* ===================== CARTA 5 – 19 MAYO (CUMPLEAÑOS) ===================== */
             `
-<h3>Celebración Oficial del Instituto</h3>
+<h3>Celebración Oficial de la Academia</h3>
 
 <p>
 Hoy, el
-<strong>Howard Institute – Instituto de Magia y Ciencias</strong>
+<strong>HOGWARTS - Academy of Magic and Science</strong>
 detiene sus actividades para celebrar una fecha extraordinaria:
 </p>
 
 <p style="text-align:center; font-weight:bold; font-size:1.1em;">
-Tu cumpleaños
+Cumpleaños de: Ximena García Mendieta 🎂
 </p>
 
 <p>
@@ -372,8 +395,7 @@ y momentos que recuerden lo especial que eres.
 
 <p style="margin-top:30px; text-align:center; font-weight:bold;">
 Con afecto eterno,<br>
-🪄 Howard Institute<br>
-Instituto de Magia y Ciencias
+🪄 HOGWARTS - Academy of Magic and Science
 </p>
 `
         ];
