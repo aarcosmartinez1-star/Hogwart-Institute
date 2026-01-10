@@ -430,3 +430,4 @@ Con afecto eterno,<br>
     console.log("Fecha objetivo: 19 de marzo de 2026");
     console.log("Cartas de regalo en: 14/feb, 14/mar, 14/abr y 19/mar");
 });
+
