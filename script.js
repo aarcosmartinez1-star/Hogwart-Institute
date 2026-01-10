@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fechas de desbloqueo de cartas
     const giftDates = [
         new Date(2026, 1, 14), // Carta 1 → 14 febrero
-        new Date(2026, 2, 14), // Carta 2 → 14 marzo
+        new Date(2026, 0, 14), // Carta 2 → 14 marzo
         new Date(2026, 3, 14), // Carta 3 → 14 abril
         new Date(2026, 4, 14), // Carta 4 → 14 mayo (Varita de Saúco)
         new Date(2026, 4, 19)  // Carta 5 → 19 mayo (Cumpleaños)
