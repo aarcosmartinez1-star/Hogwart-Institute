@@ -434,79 +434,49 @@ Con afecto eterno,<br>
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
-// =====================================
-// CONFIGURACIÓN DE FECHAS
-// =====================================
+document.addEventListener("DOMContentLoaded", () => {
 
-// FECHA DE INICIO (8 de Enero de 2026)
-const startYear  = 2026;
-const startMonth = 0;   // Enero = 0
-const startDay   = 8;
+    // FECHA OBJETIVO (modifica si quieres)
+    const targetDate = new Date("2026-02-14T00:00:00").getTime();
 
-// FECHA OBJETIVO (MODIFICA AQUÍ)
-const targetYear  = 2026;
-const targetMonth = 1 // Ejemplo: Mayo = 4
-const targetDay   = 14
+    const daysEl = document.getElementById("wt-days");
+    const hoursEl = document.getElementById("wt-hours");
+    const minutesEl = document.getElementById("wt-minutes");
+    const secondsEl = document.getElementById("wt-seconds");
 
-// =====================================
-// CREACIÓN DE FECHAS
-// =====================================
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-const startDate = new Date(
-    startYear,
-    startMonth,
-    startDay,
-    0, 0, 0
-).getTime();
+        if (distance <= 0) {
+            daysEl.textContent = "00";
+            hoursEl.textContent = "00";
+            minutesEl.textContent = "00";
+            secondsEl.textContent = "00";
+            return;
+        }
 
-const workTargetDate = new Date(
-    targetYear,
-    targetMonth,
-    targetDay,
-    0, 0, 0
-).getTime();
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-// =====================================
-// FUNCIÓN DEL TEMPORIZADOR
-// =====================================
-
-function updateWorkTimer() {
-    const now = new Date().getTime();
-
-    // Aún no inicia
-    if (now < startDate) {
-        document.getElementById("wt-days").textContent = "--";
-        document.getElementById("wt-hours").textContent = "--";
-        document.getElementById("wt-minutes").textContent = "--";
-        document.getElementById("wt-seconds").textContent = "--";
-        return;
+        daysEl.textContent = String(days).padStart(2, "0");
+        hoursEl.textContent = String(hours).padStart(2, "0");
+        minutesEl.textContent = String(minutes).padStart(2, "0");
+        secondsEl.textContent = String(seconds).padStart(2, "0");
     }
 
-    const distance = workTargetDate - now;
-
-    // Ya terminó
-    if (distance <= 0) {
-        document.querySelector(".work-timer").innerHTML =
-            "<p style='color:#d4c19c;font-weight:bold;font-size:1.3rem;'>✨ La magia está lista ✨</p>";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("wt-days").textContent = days;
-    document.getElementById("wt-hours").textContent = hours;
-    document.getElementById("wt-minutes").textContent = minutes;
-    document.getElementById("wt-seconds").textContent = seconds;
-}
-
-// =====================================
-// INICIO DEL TEMPORIZADOR
-// =====================================
-
-updateWorkTimer();
-setInterval(updateWorkTimer, 1000);
+    updateTimer();
+    setInterval(updateTimer, 1000);
+});
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
+
+const music = document.getElementById("bg-music");
+
+// Se activa con el primer clic en cualquier parte
+document.addEventListener("click", () => {
+    music.volume = 0.35; // volumen suave
+    music.play();
+}, { once: true });

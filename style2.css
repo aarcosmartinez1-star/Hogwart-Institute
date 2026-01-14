@@ -83,62 +83,224 @@
 }
 
 
-/* ===================== */
-/* SEGUIMOS TRABAJANDO */
-/* ===================== */
-
+/* ===== SECCIÓN EN PROCESO ===== */
 .en_proceso_trabajo {
-    background: rgba(26, 43, 62, 0.85);
-    border-radius: 20px;
-    padding: 50px 30px;
-    margin: 60px 0;
+    padding: 80px 20px;
     text-align: center;
-    border: 2px dashed #8a6d3b;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, 0,  #192a3d );
+    
+    color: #fff;
+    overflow: hidden;
 }
 
+/* TÍTULO */
 .en_proceso_trabajo .section-title h2 {
-    font-family: 'Cinzel', serif;
-    color: #d4c19c;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
+    animation: fadeDown 1.2s ease forwards;
 }
 
 .en_proceso_trabajo .section-title p {
-    color: #e0d7c3;
-    font-style: italic;
-    margin-bottom: 35px;
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards;
+    animation-delay: 0.4s;
 }
 
+/* CONTADOR */
 .work-timer {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
 .time-box {
-    background: linear-gradient(145deg, #f9f5eb, #efe8d7);
-    border-radius: 15px;
-    width: 110px;
-    padding: 20px 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: 2px solid #d4c19c;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px 25px;
+    min-width: 110px;
+    backdrop-filter: blur(6px);
+    animation: floatBox 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(120, 160, 255, 0.15);
 }
+
+/* Retraso progresivo */
+.time-box:nth-child(1) { animation-delay: 0s; }
+.time-box:nth-child(2) { animation-delay: 0.3s; }
+.time-box:nth-child(3) { animation-delay: 0.6s; }
+.time-box:nth-child(4) { animation-delay: 0.9s; }
 
 .time-box span {
     display: block;
     font-size: 2.2rem;
-    font-weight: 900;
-    color: #8a6d3b;
+    font-weight: bold;
+    color: #9ecbff;
+    animation: glow 2s infinite alternate;
 }
 
 .time-box small {
-    display: block;
-    margin-top: 5px;
-    font-weight: bold;
+    font-size: 0.8rem;
     letter-spacing: 1px;
-    color: #5a523e;
+    opacity: 0.8;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatBox {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(158, 203, 255, 0.4);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(158, 203, 255, 0.9);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .time-box {
+        min-width: 90px;
+        padding: 15px;
+    }
+
+    .time-box span {
+        font-size: 1.8rem;
+    }
 }
 
 
+
+
+
+
+/* ================= CONTENEDOR ================= */
+.real-train-wrapper {
+    position: relative;
+    width: 100%;
+    height: 120px;        /* ⬅️ más bajo */
+    margin-top: 25px;     /* ⬅️ más pegado al contador */
+    overflow: hidden;
+}
+
+/* ================= TREN ================= */
+.real-train {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* ⬅️ empieza desde el inicio */
+    display: flex;
+    align-items: flex-end;
+    animation: realTrainMove 18s linear infinite;
+}
+
+
+.real-train img {
+    display: block;
+}
+
+/* ================= LOCOMOTORA ================= */
+.locomotive-img {
+    width: 200px;
+    margin-right: 5px;    /* ⬅️ más pegado */
+    filter: drop-shadow(0 0 16px rgba(180, 200, 255, 0.35));
+}
+
+/* ================= VAGONES ================= */
+.wagon-img {
+    width: 180px;
+    margin-left: 5px;     /* ⬅️ más pegado */
+    filter: drop-shadow(0 0 12px rgba(150, 180, 255, 0.3));
+}
+
+/* ================= CHISPAS ================= */
+.magic-spark {
+    position: absolute;
+    width: 6px;           /* ⬅️ más pequeñas */
+    height: 6px;
+    background: radial-gradient(circle, #fde68a, transparent);
+    border-radius: 50%;
+    bottom: 15px;         /* ⬅️ más bajas */
+    animation: sparkMagic 2.6s infinite ease-in-out;
+}
+
+.magic-spark:nth-child(2) { left: 30%; animation-delay: 0s; }
+.magic-spark:nth-child(3) { left: 45%; animation-delay: 0.6s; }
+.magic-spark:nth-child(4) { left: 60%; animation-delay: 1.2s; }
+.magic-spark:nth-child(5) { left: 75%; animation-delay: 1.8s; }
+
+@keyframes sparkMagic {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-70px) scale(1.4); /* ⬅️ menos altura */
+    }
+}
+
+/* ================= MOVIMIENTO ================= */
+@keyframes realTrainMove {
+    from {
+        transform: translateX(-100%); /* ⬅️ entra inmediatamente */
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .real-train-wrapper {
+        height: 95px;
+        margin-top: 20px;
+    }
+
+    .locomotive-img {
+        width: 150px;
+        margin-right: 4px;
+    }
+
+    .wagon-img {
+        width: 125px;
+        margin-left: 4px;
+    }
+
+    .magic-spark {
+        bottom: 10px;
+    }
+}
