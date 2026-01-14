@@ -473,10 +473,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
-const music = document.getElementById("bg-music");
+//const music = document.getElementById("bg-music");
 
 // Se activa con el primer clic en cualquier parte
-document.addEventListener("click", () => {
-    music.volume = 0.35; // volumen suave
-    music.play();
-}, { once: true });
+//document.addEventListener("click", () => {
+    //music.volume = 0.35; // volumen suave
+   // music.play();
+//}, { once: true });
