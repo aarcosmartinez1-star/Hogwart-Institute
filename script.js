@@ -431,3 +431,82 @@ Con afecto eterno,<br>
     console.log("Cartas de regalo en: 14/feb, 14/mar, 14/abr y 19/mar");
 });
 
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+// =====================================
+// CONFIGURACIÓN DE FECHAS
+// =====================================
+
+// FECHA DE INICIO (8 de Enero de 2026)
+const startYear  = 2026;
+const startMonth = 0;   // Enero = 0
+const startDay   = 8;
+
+// FECHA OBJETIVO (MODIFICA AQUÍ)
+const targetYear  = 2026;
+const targetMonth = 1 // Ejemplo: Mayo = 4
+const targetDay   = 14
+
+// =====================================
+// CREACIÓN DE FECHAS
+// =====================================
+
+const startDate = new Date(
+    startYear,
+    startMonth,
+    startDay,
+    0, 0, 0
+).getTime();
+
+const workTargetDate = new Date(
+    targetYear,
+    targetMonth,
+    targetDay,
+    0, 0, 0
+).getTime();
+
+// =====================================
+// FUNCIÓN DEL TEMPORIZADOR
+// =====================================
+
+function updateWorkTimer() {
+    const now = new Date().getTime();
+
+    // Aún no inicia
+    if (now < startDate) {
+        document.getElementById("wt-days").textContent = "--";
+        document.getElementById("wt-hours").textContent = "--";
+        document.getElementById("wt-minutes").textContent = "--";
+        document.getElementById("wt-seconds").textContent = "--";
+        return;
+    }
+
+    const distance = workTargetDate - now;
+
+    // Ya terminó
+    if (distance <= 0) {
+        document.querySelector(".work-timer").innerHTML =
+            "<p style='color:#d4c19c;font-weight:bold;font-size:1.3rem;'>✨ La magia está lista ✨</p>";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("wt-days").textContent = days;
+    document.getElementById("wt-hours").textContent = hours;
+    document.getElementById("wt-minutes").textContent = minutes;
+    document.getElementById("wt-seconds").textContent = seconds;
+}
+
+// =====================================
+// INICIO DEL TEMPORIZADOR
+// =====================================
+
+updateWorkTimer();
+setInterval(updateWorkTimer, 1000);
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
