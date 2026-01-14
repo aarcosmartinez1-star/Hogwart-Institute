@@ -471,12 +471,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateTimer, 1000);
 });
 
-//--------------------------------------------------------------------------------------------------------------------------------------------
-
-//const music = document.getElementById("bg-music");
+const music = document.getElementById("bg-music");
 
 // Se activa con el primer clic en cualquier parte
-//document.addEventListener("click", () => {
-    //music.volume = 0.35; // volumen suave
-   // music.play();
-//}, { once: true });
+document.addEventListener("click", () => {
+    music.volume = 0.35; // volumen suave
+    music.play();
+}, { once: true });

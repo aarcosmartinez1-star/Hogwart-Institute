@@ -304,3 +304,26 @@
         bottom: 10px;
     }
 }
+
+
+/* =================  AUDIO  ================= */
+#audio-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+#audio-controls button {
+    background: none;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#audio-controls button i {
+    margin-right: 8px;
+}
