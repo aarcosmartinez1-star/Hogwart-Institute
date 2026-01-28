@@ -6,6 +6,21 @@ if ("Notification" in window) {
 }
 
 // ===============================
+// 💾 GUARDAR Y CARGAR MENSAJES
+// ===============================
+function saveMessages() {
+    const board = document.getElementById("messageBoard");
+    localStorage.setItem("owlMessages", board.innerHTML);
+}
+
+function loadMessages() {
+    const saved = localStorage.getItem("owlMessages");
+    if (saved) {
+        document.getElementById("messageBoard").innerHTML = saved;
+    }
+}
+
+// ===============================
 // BOTÓN NORMAL (MENSAJE DEL USUARIO)
 // ===============================
 document.getElementById("sendOwlBtn").addEventListener("click", sendOwlMessage);
@@ -45,6 +60,10 @@ function sendOwlMessage() {
                 icon: "img/LECHUZA/owl.png"
             });
         }
+
+        // 💾 Guardar mensajes
+        saveMessages();
+
     }, 2800);
 }
 
@@ -75,34 +94,50 @@ function sendProgrammerMessage(text) {
                 icon: "img/LECHUZA/owl.png"
             });
         }
+
+        // 💾 Guardar mensajes
+        saveMessages();
+
     }, 2800);
 }
 
 // ==================================================
-// ✨ EJEMPLOS DE USO AUTOMÁTICO (PUEDES BORRAR O CAMBIAR)
+// ✨ MENSAJES AUTOMÁTICOS AL CARGAR
 // ==================================================
-
-// Mensaje al cargar la página
 window.addEventListener("load", () => {
+    // Cargar mensajes guardados primero
+    loadMessages();
+
+    // Mensaje de bienvenida
     sendProgrammerMessage("Bienvenida Ximena, la magia de hoy comienza contigo 🦉✨");
-   
+
+    // Revisar fechas especiales
+    checkSpecialDate();
 });
 
-// Mensaje por fecha especial (ejemplo cumpleaños 19 de Mayo)
+// ==================================================
+// 📅 MENSAJES POR FECHAS ESPECIALES
+// ==================================================
 function checkSpecialDate() {
     const today = new Date();
     const day = today.getDate();
     const month = today.getMonth() + 1;
 
+    // 27 de enero
     if (day === 27 && month === 1) {
-        sendProgrammerMessage("✨ Ximena, mañana tienes una cita especial escrita por la magia. " +
-            "Prepárate para un momento donde el tiempo se detendrá solo para ti 🦉💫");
+        sendProgrammerMessage(
+            "✨ Ximena, mañana tienes una cita especial escrita por la magia. " +
+            "Prepárate para un momento donde el tiempo se detendrá solo para ti 🦉💫"
+        );
+
+        sendProgrammerMessage("✨ Buenas Noches Muñequitaaaaa 🩷🌙");
     }
-    if (day === 27 && month === 1) {
-        sendProgrammerMessage("✨ Buenas Noches Muñequitaaaaa");
-    }
+
+    // 19 de mayo (cumpleaños)
     if (day === 19 && month === 5) {
-        sendProgrammerMessage("🎂 Feliz cumpleaños Ximena, Hogwarts celebra tu magia hoy y siempre ✨🩷");
+        sendProgrammerMessage(
+            "🎂 Feliz cumpleaños Ximena, Hogwarts celebra tu magia hoy y siempre ✨🩷"
+        );
     }
 }
 
