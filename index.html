@@ -7,6 +7,8 @@
     <title>Hogwarts - Academy of Magic and Science</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -175,54 +177,38 @@
             </div>
         </section>
 
-        <!-------------------------------------------------------------------------------------------------------------------->
+
         <!-- ===================== -->
-        <section class="en_proceso_trabajo">
-
+        <!-- LECHUZA MENSAJERA -->
+        <!-- ===================== -->
+        <section class="owl-section">
             <div class="section-title">
-                <h2>Seguimos Trabajando...</h2>
-                <p>La magia se está preparando. Muy pronto habrá novedades.</p>
+                <h2>🦉 Lechuza Mensajera</h2>
+                <p>Tu mensaje viajará con magia hasta su destino</p>
             </div>
 
-            <div class="work-timer">
-                <div class="time-box">
-                    <span id="wt-days">00</span>
-                    <small>DÍAS</small>
+            <div class="owl-wrapper">
+                <div class="owl-box">
+                    <div class="owl-glow"></div>
+                    <img src="img/lechuza.png" id="owl" alt="Lechuza Mensajera">
                 </div>
-                <div class="time-box">
-                    <span id="wt-hours">00</span>
-                    <small>HORAS</small>
-                </div>
-                <div class="time-box">
-                    <span id="wt-minutes">00</span>
-                    <small>MIN</small>
-                </div>
-                <div class="time-box">
-                    <span id="wt-seconds">00</span>
-                    <small>SEG</small>
+
+                <div class="owl-form">
+                    <h3>Escribe tu pergamino</h3>
+                    <textarea id="owlMessage" placeholder="Querida Ximena, la magia de hoy es..."></textarea>
+                    <button id="sendOwlBtn">
+                        ✨ Enviar con la Lechuza
+                    </button>
                 </div>
             </div>
 
-            <!-- 🚂 TREN REALISTA -->
-            <div class="real-train-wrapper">
-                <div class="real-train">
-                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/locomotora.png" class="locomotive-img" alt="Locomotora mágica">
-
-                </div>
-
-                <!-- ✨ CHISPAS -->
-                <span class="magic-spark"></span>
-                <span class="magic-spark"></span>
-                <span class="magic-spark"></span>
-                <span class="magic-spark"></span>
+            <div class="received-messages">
+                <h3>📜 Pergaminos Recibidos</h3>
+                <div id="messageBoard"></div>
             </div>
 
         </section>
+
 
         <!-------------------------------------------------------------------------------------------------------------------->
 
@@ -231,8 +217,7 @@
         <!-- ===================== -->
         <!-- ÁLBUM DE RECUERDOS -->
         <!-- ===================== -->
-        <!--
-       
+        <!---
         <section class="album-section">
             <div class="section-title">
                 <h2>Álbum de Recuerdos</h2>
@@ -397,10 +382,61 @@
 
             </div>
         </section>
-        
+
         -->
-        
-       
+        <!-------------------------------------------------------------------------------------------------------------------->
+        <!-- ===================== -->
+        <section class="en_proceso_trabajo">
+
+            <div class="section-title">
+                <h2>Seguimos Trabajando...</h2>
+                <p>La magia se está preparando. Muy pronto habrá novedades.</p>
+            </div>
+
+            <div class="work-timer">
+                <div class="time-box">
+                    <span id="wt-days">00</span>
+                    <small>DÍAS</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-hours">00</span>
+                    <small>HORAS</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-minutes">00</span>
+                    <small>MIN</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-seconds">00</span>
+                    <small>SEG</small>
+                </div>
+            </div>
+
+            <!-- 🚂 TREN REALISTA -->
+            <div class="real-train-wrapper">
+                <div class="real-train">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/locomotora.png" class="locomotive-img" alt="Locomotora mágica">
+
+                </div>
+
+                <!-- ✨ CHISPAS -->
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+            </div>
+
+        </section>
+
+
+
+
+
         <section class="instructions">
             <h3>Instrucciones</h3>
             <p>
@@ -445,6 +481,8 @@
 
 
     <script src="script.js"></script>
+    <script src="lechuza.js"></script>
+
 
 </body>
 
