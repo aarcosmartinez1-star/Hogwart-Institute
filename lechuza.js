@@ -98,6 +98,9 @@ function checkSpecialDate() {
         sendProgrammerMessage("✨ Ximena, mañana tienes una cita especial escrita por la magia. " +
             "Prepárate para un momento donde el tiempo se detendrá solo para ti 🦉💫");
     }
+    if (day === 27 && month === 1) {
+        sendProgrammerMessage("✨ Buenas Noches Muñequitaaaaa");
+    }
     if (day === 19 && month === 5) {
         sendProgrammerMessage("🎂 Feliz cumpleaños Ximena, Hogwarts celebra tu magia hoy y siempre ✨🩷");
     }
