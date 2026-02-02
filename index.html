@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +178,39 @@
             </div>
         </section>
 
+    <!-- ===================== -->
+        <!-- CARTA MAGICA -->
+        <!-- ===================== -->
+
+
+
+        <section class="magic-valentine">
+            <div class="magic-card">
+                <h2>🦉 Mensaje Confidencial</h2>
+
+                <p class="magic-text">
+                    Por autorización del Colegio Hogwarts de Magia y Hechicería,
+                    esta carta ha sido enviada exclusivamente para ti.
+                </p>
+
+                <p class="magic-question">
+                    ¿Te gustaría ser parte de una noche mágica
+                    este <span>14 de febrero</span>? con tu hechicero especial ✨
+                </p>
+
+                <div class="magic-buttons">
+                    <button class="magic-btn yes" onclick="acceptMagic()">
+                        ✨ Acepto la invitación
+                    </button>
+                    <button class="magic-btn no" onmouseover="escapeMagic(this)">
+                        ❌ No
+                    </button>
+                </div>
+
+                <p id="magicResult" class="magic-result"></p>
+            </div>
+        </section>
+        <script src="mensajemagico.js"></script>
 
         <!-- ===================== -->
         <!-- LECHUZA MENSAJERA -->
@@ -205,7 +239,7 @@
             <div class="received-messages">
                 <h3>📜 Pergaminos Recibidos</h3>
                 <div id="messageBoard"></div>
-            
+
             </div>
 
         </section>
