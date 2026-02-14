@@ -1,3 +1,5 @@
+<!---- ACTUALIZACION 2.0 14 DE FEBRERO DEL 2026-->
+<!---- H O G W A R T S  A C A D E M Y -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,10 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts - Academy of Magic and Science</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="style3.css">
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="estilos/style1.css">
+    <link rel="stylesheet" href="estilos/album.css">
+    <link rel="stylesheet" href="estilos/lechuza.css">
+    <link rel="stylesheet" href="estilos/mensajemagico.css">
+    <link rel="stylesheet" href="estilos/cineteca.css">
+    <link rel="stylesheet" href="sombrer.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +23,7 @@
 </head>
 
 <body>
+   
     <div id="background-selector">
         <label for="bg-select">Cambiar fondo:</label>
         <select id="bg-select">
@@ -178,39 +183,7 @@
             </div>
         </section>
 
-    <!-- ===================== -->
-        <!-- CARTA MAGICA -->
-        <!-- ===================== -->
 
-
-
-        <section class="magic-valentine">
-            <div class="magic-card">
-                <h2>🦉 Mensaje Confidencial</h2>
-
-                <p class="magic-text">
-                    Por autorización del Colegio Hogwarts de Magia y Hechicería,
-                    esta carta ha sido enviada exclusivamente para ti.
-                </p>
-
-                <p class="magic-question">
-                    ¿Te gustaría ser parte de una noche mágica
-                    este <span>14 de febrero</span>? con tu hechicero especial ✨
-                </p>
-
-                <div class="magic-buttons">
-                    <button class="magic-btn yes" onclick="acceptMagic()">
-                        ✨ Acepto la invitación
-                    </button>
-                    <button class="magic-btn no" onmouseover="escapeMagic(this)">
-                        ❌ No
-                    </button>
-                </div>
-
-                <p id="magicResult" class="magic-result"></p>
-            </div>
-        </section>
-        <script src="mensajemagico.js"></script>
 
         <!-- ===================== -->
         <!-- LECHUZA MENSAJERA -->
@@ -249,14 +222,133 @@
 
 
 
-        <!-------------------------------------------------------------------------------------------------------------------->
+        <!-- =================================================================================================-->
+
+
+        <!-- SECCIÓN: CINETECA MÁGICA -->
+        <section id="cineteca-magica" class="cineteca-section hidden-magic">
+            <div class="container">
+                <h2 class="cineteca-title">🎥 Cineteca Mágica</h2>
+                <p class="cineteca-desc">
+                    La magia también se vive en pantalla. Disfruta esta proyección especial.
+                </p>
+
+                <div class="video-wrapper">
+                    <iframe id="cineteca-video" src="https://www.youtube.com/embed/987iNvZMRmY" title="Cineteca Mágica"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+
+                    <button id="playMagicBtn" class="magic-btn">
+                        ✨ Iniciar Proyección
+                    </button>
+                </div>
+        </section>
+
+        <script src="cineteca.js"></script>
+
+
+        <!-- =================================================================================================-->
+
+        <!----------------------------------------------------------------------------------------------------------------------------->
+        <!--  S O M B R E R O  -->
+         <!--
+        <div class="selector-section">
+            <div class="container">
+               
+                <div class="hat-intro" id="hatIntro">
+                    <img src="img/CASAS/sombrero.png" alt="Sombrero Seleccionador" class="hat-image">
+                    <div class="hat-speech">
+                        "¡Hmm, difícil, muy difícil! Veo mucha valentía en ti... y también astucia.
+                        Tienes un gran sentido de la lealtad... pero también una mente ávida de conocimiento.
+                        Mejor que te coloque en..."
+                    </div>
+                    <button class="continue-btn" id="continueBtn">Ver las casas</button>
+                </div>
+
+                <h2 class="selector-title hidden-magic" id="selectorTitle">Sombrero Seleccionador</h2>
+                <p class="selector-subtitle hidden-magic" id="selectorSubtitle">
+                    El sombrero decidirá tu destino en Hogwarts. ¡Observa cómo evalúa tu mente y corazón!
+                </p>
+
+                <div class="houses-container hidden-magic" id="housesContainer">
+                    <div class="house-card gryffindor" data-house="gryffindor">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Gryffindor-Logo.png" alt="Gryffindor" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Gryffindor</h3>
+                    </div>
+                    <div class="house-card slytherin" data-house="slytherin">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Slytherin-Logo.png" alt="Slytherin" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Slytherin</h3>
+                    </div>
+                    <div class="house-card hufflepuff" data-house="hufflepuff">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Hufflepuf---Logo.png" alt="Hufflepuff" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Hufflepuff</h3>
+                    </div>
+                    <div class="house-card ravenclaw" data-house="ravenclaw">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Ravenclaw</h3>
+                    </div>
+                </div>
+
+                <div class="selection-counter hidden-magic" id="selectionCounter">
+                    El sombrero está pensando: <span class="counter-number">0</span>/10
+                </div>
+
+                <button class="start-selection-btn hidden-magic" id="startSelection">
+                    Comenzar Selección
+                </button>
+
+                <div class="selection-result initial-state hidden-magic" id="selectionResult">
+                   
+                    
+                    <div class="reveal-particles" id="revealParticles"></div>
+
+                    
+                    <div class="question-content">
+                        <span class="question-mark">?</span>
+                        <h3 class="discover-message">¡Descubre tu casa!</h3>
+                        <p class="discover-subtitle">
+                            Haz clic en "Comenzar Selección" para que el Sombrero Seleccionador
+                            determine a qué casa de Hogwarts perteneces.
+                        </p>
+                    </div>
+
+                   
+                    
+                    <div class="result-content">
+                        <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="result-house-image">
+                        <h3 class="result-title">¡Ravenclaw!</h3>
+                        <p class="result-text">
+                            ¡Felicidades! El Sombrero Seleccionador ha decidido que perteneces a Ravenclaw.
+                            Tu inteligencia, creatividad y sabiduría te hacen un miembro perfecto de esta casa.
+                            En la Torre de Ravenclaw, donde reside el águila, encontrarás compañeros que valoran
+                            el aprendizaje y la curiosidad tanto como tú.
+                        </p>
+                        <button class="reset-btn" id="resetSelection">Volver a intentar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particles" id="selectorParticles"></div>
+        </div>
+        <script src="sombrero.js"></script> -->
+        <!----------------------------------------------------------------------------------------------------------------------------->
 
 
 
         <!-- ===================== -->
         <!-- ÁLBUM DE RECUERDOS -->
         <!-- ===================== -->
-        <!---
+
         <section class="album-section">
             <div class="section-title">
                 <h2>Álbum de Recuerdos</h2>
@@ -422,9 +514,10 @@
             </div>
         </section>
 
-        -->
+
         <!-------------------------------------------------------------------------------------------------------------------->
         <!-- ===================== -->
+
         <section class="en_proceso_trabajo">
 
             <div class="section-title">
@@ -459,7 +552,8 @@
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-                    <img src="img/LOCOMOTORA/locomotora.png" class="locomotive-img" alt="Locomotora mágica">
+
+                    <img src="img/LOCOMOTORA/locomotora1.png" class="wagon-img" alt="Vagón">
 
                 </div>
 

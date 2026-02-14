@@ -1,0 +1,257 @@
+<!-------------------------------------------------------------------------------------------------------------------->
+<!-- ===================== -->
+<!-- CARTA MAGICA -->
+<!-- ===================== -->
+
+
+
+<section class="magic-valentine">
+    <div class="magic-card">
+        <h2>🦉 Mensaje Confidencial</h2>
+
+        <p class="magic-text">
+            Por autorización del Colegio Hogwarts de Magia y Hechicería,
+            esta carta ha sido enviada exclusivamente para ti.
+        </p>
+
+        <p class="magic-question">
+            ¿Te gustaría ser parte de una noche mágica
+            este <span>14 de febrero</span>? con tu hechicero especial ✨
+        </p>
+
+        <div class="magic-buttons">
+            <button class="magic-btn yes" onclick="acceptMagic()">
+                ✨ Acepto la invitación
+            </button>
+            <button class="magic-btn no" onmouseover="escapeMagic(this)">
+                ❌ No
+            </button>
+        </div>
+
+        <p id="magicResult" class="magic-result"></p>
+    </div>
+</section>
+<script src="mensajemagico.js"></script>
+
+<!-------------------------------------------------------------------------------------------------------------------->
+
+
+
+<!-- ===================== -->
+<!-- ÁLBUM DE RECUERDOS -->
+<!-- ===================== -->
+
+        <section class="album-section">
+            <div class="section-title">
+                <h2>Álbum de Recuerdos</h2>
+                <p>Momentos que forman parte de tu historia magíca con una personita especial</p>
+            </div>
+
+            <div class="album-container">
+
+                <div class="album-card">
+                    <img src="img/R1.jpg" alt="Recuerdo 1">
+                    <div class="album-info">
+                        <h3>Recuerdo 1</h3>
+                        <p>Primera Cita Museo🖼️ - Acuario🪼 - Restaurante🍷.</p>
+                        <span>14 de Agosto 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R2.jpg" alt="Recuerdo 2">
+                    <div class="album-info">
+                        <h3>Recuerdo 2</h3>
+                        <p>Primera Cita Lago Ciudad Universitaria BUAP🌳 .</p>
+                        <span>19 de Agosto 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R3.jpg" alt="Recuerdo 3">
+                    <div class="album-info">
+                        <h3>Recuerdo 3</h3>
+                        <p>Concierto En CU🏟️.</p>
+                        <span>21 de Agosto 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R4.jpg" alt="Recuerdo 4">
+                    <div class="album-info">
+                        <h3>Recuerdo 4</h3>
+                        <p>Laguna de San Baltazar.🌿</p>
+                        <span>27 de Agosto 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R5.jpg" alt="Recuerdo 5">
+                    <div class="album-info">
+                        <h3>Recuerdo 5</h3>
+                        <p>Picnic Flor del Bosque🧺 - Llegada de Luna🧸</p>
+                        <span>6 de Septiembre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R6.jpg" alt="Recuerdo 6">
+                    <div class="album-info">
+                        <h3>Recuerdo 6</h3>
+                        <p>Planetario Los Fuertes🪐 </p>
+                        <span>20 de Septiembre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R7.jpg" alt="Recuerdo 7">
+                    <div class="album-info">
+                        <h3>Recuerdo 7</h3>
+                        <p>Fortaleza de San Carlos Perote 🏰</p>
+                        <span>27 de Septiembre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R8.jpg" alt="Recuerdo 8">
+                    <div class="album-info">
+                        <h3>Recuerdo 8</h3>
+                        <p>Regalo Especial 🎀 </p>
+                        <span>9 Octubre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R9.jpg" alt="Recuerdo 9">
+                    <div class="album-info">
+                        <h3>Recuerdo 9</h3>
+                        <p>Día de Muertos - Atlixco🌻 </p>
+                        <span>12 Octubre 2025</span>
+                    </div>
+                </div>
+
+
+
+                <div class="album-card">
+                    <img src="img/R10.jpg" alt="Recuerdo 10">
+                    <div class="album-info">
+                        <h3>Recuerdo 10</h3>
+                        <p>Un Lobo Domesticado 🐺</p>
+                        <span>23 Octubre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R11.jpg" alt="Recuerdo 11">
+                    <div class="album-info">
+                        <h3>Recuerdo 11</h3>
+                        <p>Ramo de Gerberas💐</p>
+                        <span>30 Octubre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R12.jpg" alt="Recuerdo 12">
+                    <div class="album-info">
+                        <h3>Recuerdo 12</h3>
+                        <p>Bolo Fest 🎄</p>
+                        <span>28 Noviembre 2025</span>
+                    </div>
+                </div>
+
+
+
+                <div class="album-card">
+                    <img src="img/R13.jpg" alt="Recuerdo 13">
+                    <div class="album-info">
+                        <h3>Recuerdo 13</h3>
+                        <p>Casa de Gengibre 🏠</p>
+                        <span>4 Diciembre 2025</span>
+                    </div>
+                </div>
+
+
+
+                <div class="album-card">
+                    <img src="img/R14.jpg" alt="Recuerdo 14">
+                    <div class="album-info">
+                        <h3>Recuerdo 14</h3>
+                        <p>Callejón Mágico - Restaurante Harry Potter🍷🪄</p>
+                        <span>13 Diciembre 2025</span>
+                    </div>
+                </div>
+
+
+                <div class="album-card">
+                    <img src="img/R15.jpg" alt="Recuerdo 14">
+                    <div class="album-info">
+                        <h3>Recuerdo 14</h3>
+                        <p>Boda con Ximenita💒🩷 </p>
+                        <span>13 Diciembre 2025</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+<!-------------------------------------------------------------------------------------------------------------------->
+ <!-- ===================== -->
+        <section class="en_proceso_trabajo">
+
+            <div class="section-title">
+                <h2>Seguimos Trabajando...</h2>
+                <p>La magia se está preparando. Muy pronto habrá novedades.</p>
+            </div>
+
+            <div class="work-timer">
+                <div class="time-box">
+                    <span id="wt-days">00</span>
+                    <small>DÍAS</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-hours">00</span>
+                    <small>HORAS</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-minutes">00</span>
+                    <small>MIN</small>
+                </div>
+                <div class="time-box">
+                    <span id="wt-seconds">00</span>
+                    <small>SEG</small>
+                </div>
+            </div>
+
+            <!-- 🚂 TREN REALISTA -->
+            <div class="real-train-wrapper">
+                <div class="real-train">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
+                    <img src="img/LOCOMOTORA/locomotora.png" class="locomotive-img" alt="Locomotora mágica">
+
+                </div>
+
+                <!-- ✨ CHISPAS -->
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+                <span class="magic-spark"></span>
+            </div>
+
+        </section>

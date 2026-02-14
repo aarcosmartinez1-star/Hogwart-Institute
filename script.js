@@ -71,16 +71,17 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "Aurora Mágica",
-            image: "url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+            image: "url('https://images.unsplash.com/photo-1522124624696-7ea32eb9592c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         },
         {
             name: "Estrellas Nocturnas",
-            image: "url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')"
+            image: "url('https://images.unsplash.com/photo-1585588985526-9459c1bb9e9e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
         },
         {
             name: "Pergamino Antiguo",
             image: "url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80')"
         }
+        
     ];
 
     // Cambiar fondo
@@ -434,10 +435,11 @@ Con afecto eterno,<br>
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------
+//CONTADOR SEGUIMOS TRABAJANDO //
 document.addEventListener("DOMContentLoaded", () => {
 
     // FECHA OBJETIVO (modifica si quieres)
-    const targetDate = new Date("2026-02-14T00:00:00").getTime();
+    const targetDate = new Date("2026-03-14T00:00:00").getTime();
 
     const daysEl = document.getElementById("wt-days");
     const hoursEl = document.getElementById("wt-hours");

@@ -1,0 +1,774 @@
+/* =========================================== */
+/* LECHUZA MENSAJERA - Estilo Hogwarts Elegante */
+/* =========================================== */
+
+.owl-section {
+    background: linear-gradient(145deg, rgba(16, 29, 46, 0.95), rgba(26, 43, 62, 0.93));
+    border-radius: 25px;
+    padding: 50px 40px;
+    margin: 40px auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+                inset 0 0 40px rgba(138, 109, 59, 0.15),
+                0 0 60px rgba(138, 109, 59, 0.1);
+    border: 3px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    animation: sectionEntrance 1s ease-out forwards;
+}
+
+@keyframes sectionEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Fondo de pergamino */
+.owl-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    opacity: 0.08;
+    z-index: 0;
+    animation: parchmentMove 40s linear infinite;
+}
+
+@keyframes parchmentMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+}
+
+/* Efecto de brillo mágico */
+.owl-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(240, 217, 163, 0.05) 0%, transparent 70%);
+    animation: magicGlow 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes magicGlow {
+    0%, 100% { transform: scale(1); opacity: 0.05; }
+    50% { transform: scale(1.1); opacity: 0.1; }
+}
+
+/* Título de la sección */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #f0d9a3;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(240, 217, 163, 0.5),
+                 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 40px rgba(240, 217, 163, 0.2);
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    animation: titleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+    0%, 100% { 
+        text-shadow: 0 0 20px rgba(240, 217, 163, 0.5),
+                     2px 2px 4px rgba(0, 0, 0, 0.5),
+                     0 0 40px rgba(240, 217, 163, 0.2);
+    }
+    50% { 
+        text-shadow: 0 0 25px rgba(240, 217, 163, 0.7),
+                     3px 3px 6px rgba(0, 0, 0, 0.6),
+                     0 0 50px rgba(240, 217, 163, 0.3);
+    }
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #f0d9a3, #8a6d3b, #f0d9a3, transparent);
+    border-radius: 2px;
+    animation: linePulse 2.5s ease-in-out infinite;
+}
+
+.section-title p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #d4c19c;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor principal */
+.owl-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+/* LECHUZA SIN CAJÓN - Solo imagen flotante */
+.owl-container {
+    flex: 0 0 350px;
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Glow alrededor de la lechuza */
+.owl-glow {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+                rgba(240, 217, 163, 0.3) 0%,
+                rgba(138, 109, 59, 0.2) 30%,
+                transparent 70%);
+    animation: owlGlow 8s ease-in-out infinite;
+    filter: blur(40px);
+    z-index: 1;
+}
+
+@keyframes owlGlow {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: scale(0.95);
+    }
+    50% { 
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+}
+
+/* Imagen de la lechuza - SOLO IMAGEN FLOTANTE */
+#owl {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    transition: all 0.6s ease;
+    filter: drop-shadow(0 0 20px rgba(240, 217, 163, 0.3)) 
+            sepia(0.3) 
+            brightness(0.95);
+    animation: owlFloat 6s ease-in-out infinite;
+}
+
+@keyframes owlFloat {
+    0%, 100% { 
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% { 
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+#owl:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(240, 217, 163, 0.5)) 
+            sepia(0.2) 
+            brightness(1.1);
+    animation-play-state: paused;
+}
+
+/* Formulario de mensaje */
+.owl-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: linear-gradient(145deg, rgba(40, 55, 74, 0.8), rgba(30, 45, 64, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid rgba(138, 109, 59, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+.owl-form:hover {
+    border-color: rgba(138, 109, 59, 0.5);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+                inset 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+.owl-form h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #f0d9a3;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(240, 217, 163, 0.3);
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.owl-form h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8a6d3b, transparent);
+}
+
+/* Textarea del mensaje */
+#owlMessage {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(145deg, rgba(25, 40, 59, 0.9), rgba(35, 50, 69, 0.8));
+    border: 2px solid rgba(138, 109, 59, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    color: #f0d9a3;
+    font-size: 1.1rem;
+    resize: none;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#owlMessage:focus {
+    outline: none;
+    border-color: #f0d9a3;
+    background: linear-gradient(145deg, rgba(30, 45, 64, 0.95), rgba(40, 55, 74, 0.85));
+    box-shadow: 0 0 0 3px rgba(240, 217, 163, 0.1),
+                inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#owlMessage::placeholder {
+    color: rgba(212, 193, 156, 0.5);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Botón de envío */
+#sendOwlBtn {
+    display: block;
+    width: 100%;
+    padding: 18px 30px;
+    background: linear-gradient(145deg, #8a6d3b, #6b542c);
+    color: #f0d9a3;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 25px rgba(138, 109, 59, 0.2);
+    z-index: 1;
+}
+
+#sendOwlBtn:hover {
+    background: linear-gradient(145deg, #9a7d4b, #7b643c);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4),
+                0 0 35px rgba(138, 109, 59, 0.3);
+    letter-spacing: 3px;
+}
+
+#sendOwlBtn:active {
+    transform: translateY(-2px);
+}
+
+#sendOwlBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                rgba(255, 255, 255, 0.4), 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+#sendOwlBtn:hover::before {
+    left: 100%;
+}
+
+#sendOwlBtn::after {
+    content: '🦉';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    animation: owlBlink 3s ease-in-out infinite;
+}
+
+@keyframes owlBlink {
+    0%, 90%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+    95% { opacity: 0.5; transform: translateY(-50%) scale(0.95); }
+}
+
+/* Sección de mensajes recibidos */
+.received-messages {
+    background: linear-gradient(145deg, rgba(40, 55, 74, 0.8), rgba(30, 45, 64, 0.9));
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid rgba(138, 109, 59, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.received-messages:hover {
+    border-color: rgba(138, 109, 59, 0.5);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+                inset 0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+.received-messages h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #f0d9a3;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(240, 217, 163, 0.3);
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.received-messages h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8a6d3b, transparent);
+}
+
+/* Tablero de mensajes */
+#messageBoard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #8a6d3b rgba(20, 30, 40, 0.5);
+}
+
+#messageBoard::-webkit-scrollbar {
+    width: 8px;
+}
+
+#messageBoard::-webkit-scrollbar-track {
+    background: rgba(20, 30, 40, 0.5);
+    border-radius: 4px;
+}
+
+#messageBoard::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #8a6d3b, #6b542c);
+    border-radius: 4px;
+    border: 1px solid rgba(240, 217, 163, 0.2);
+}
+
+#messageBoard::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #9a7d4b, #7b643c);
+}
+
+/* Mensaje individual */
+.message-item {
+    background: linear-gradient(145deg, rgba(35, 50, 69, 0.9), rgba(25, 40, 59, 0.8));
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #8a6d3b;
+    color: #f0d9a3;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    position: relative;
+    overflow: hidden;
+    animation: messageAppear 0.6s ease-out;
+}
+
+@keyframes messageAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.message-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-left-color: #f0d9a3;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(138, 109, 59, 0.3);
+}
+
+.message-item::before {
+    content: '✉️';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.2rem;
+    opacity: 0.3;
+}
+
+.message-text {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d4c19c;
+}
+
+.message-date {
+    font-size: 0.85rem;
+    color: #b09c7c;
+    text-align: right;
+    font-style: italic;
+    border-top: 1px solid rgba(138, 109, 59, 0.2);
+    padding-top: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+/* Mensaje vacío */
+#messageBoard:empty::before {
+    content: '📭 No hay mensajes aún. ¡Envía el primero!';
+    display: block;
+    text-align: center;
+    color: rgba(212, 193, 156, 0.5);
+    padding: 50px 20px;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+}
+
+/* Notificación estilo Hogwarts */
+.notification {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, rgba(40, 55, 74, 0.95), rgba(30, 45, 64, 0.98));
+    color: #f0d9a3;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 2px solid #8a6d3b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(138, 109, 59, 0.4);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateX(150%) scale(0.9);
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    font-family: 'Cinzel', serif;
+    opacity: 0;
+}
+
+.notification.show {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.notification-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 5px rgba(240, 217, 163, 0.5));
+}
+
+.notification-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #f0d9a3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(240, 217, 163, 0.3);
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #d4c19c;
+    line-height: 1.5;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Animación de vuelo de lechuza */
+.owl-flying {
+    animation: owlTakeoff 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards !important;
+}
+
+@keyframes owlTakeoff {
+    0% { 
+        transform: translateX(0) translateY(0) rotate(0) scale(1);
+        filter: drop-shadow(0 0 20px rgba(240, 217, 163, 0.3)) 
+                sepia(0.3) 
+                brightness(0.95);
+        opacity: 1;
+    }
+    20% { 
+        transform: translateX(50px) translateY(-30px) rotate(5deg) scale(1.1);
+        filter: drop-shadow(0 0 25px rgba(240, 217, 163, 0.4)) 
+                sepia(0.2) 
+                brightness(1.05);
+    }
+    40% { 
+        transform: translateX(120px) translateY(-80px) rotate(10deg) scale(1.2);
+        filter: drop-shadow(0 0 30px rgba(240, 217, 163, 0.5)) 
+                sepia(0.1) 
+                brightness(1.15);
+    }
+    60% { 
+        transform: translateX(220px) translateY(-120px) rotate(15deg) scale(1.3);
+        filter: drop-shadow(0 0 35px rgba(240, 217, 163, 0.6)) 
+                sepia(0) 
+                brightness(1.25);
+        opacity: 0.8;
+    }
+    80% { 
+        transform: translateX(350px) translateY(-180px) rotate(20deg) scale(1.4);
+        filter: drop-shadow(0 0 40px rgba(240, 217, 163, 0.7)) 
+                brightness(1.35);
+        opacity: 0.4;
+    }
+    100% { 
+        transform: translateX(500px) translateY(-250px) rotate(25deg) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Partículas mágicas */
+.owl-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.owl-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #f0d9a3 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: owlParticleFloat 2s ease-out forwards;
+}
+
+@keyframes owlParticleFloat {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Efecto de plumas cayendo durante el vuelo */
+.feather {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #f0d9a3, #d4c19c);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    opacity: 0;
+    z-index: 3;
+}
+
+.feather-fall {
+    animation: featherFall 3s linear forwards;
+}
+
+@keyframes featherFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .owl-wrapper {
+        justify-content: center;
+    }
+    
+    .owl-container {
+        flex: 0 0 300px;
+        height: 300px;
+    }
+    
+    #owl {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .owl-form {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .owl-section {
+        padding: 40px 30px;
+    }
+    
+    .section-title h2 {
+        font-size: 2.5rem;
+    }
+    
+    .owl-container {
+        flex: 0 0 280px;
+        height: 280px;
+    }
+    
+    #owl {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .owl-form, .received-messages {
+        max-width: 100%;
+    }
+    
+    #messageBoard {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .owl-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .owl-container {
+        width: 100%;
+        height: 250px;
+    }
+    
+    #owl {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem;
+    }
+    
+    .owl-form h3,
+    .received-messages h3 {
+        font-size: 1.6rem;
+    }
+    
+    .notification {
+        left: 20px;
+        right: 20px;
+        max-width: calc(100% - 40px);
+        top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .owl-section {
+        padding: 30px 20px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title p {
+        font-size: 1rem;
+    }
+    
+    .owl-container {
+        height: 200px;
+    }
+    
+    #owl {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #owlMessage {
+        height: 150px;
+        font-size: 1rem;
+    }
+    
+    #sendOwlBtn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+    
+    #messageBoard {
+        grid-template-columns: 1fr;
+        max-height: 300px;
+    }
+    
+    .message-item {
+        padding: 15px;
+    }
+}

@@ -857,3 +857,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
     `, 'color: #f0e6d2; background: #1a1a2e; padding: 15px; border-radius: 8px; font-family: monospace;');
 });
+
+
+
+// ===============================
+// 🦉 LECHUZA MENSAJERA AVANZADA
+// ===============================
+
+const owl = document.querySelector(".owl-container");
+const sound = document.getElementById("owl-sound");
+
+function openOwlMessage() {
+  // sonido
+  if (sound) sound.play();
+
+  // scroll al mensaje mágico
+  document
+    .querySelector(".magic-valentine")
+    ?.scrollIntoView({ behavior: "smooth" });
+
+  // desaparecer
+  owl.classList.add("hide");
+
+  setTimeout(() => {
+    owl.style.display = "none";
+    owl.classList.remove("hide");
+  }, 1000);
+}
+
+// CUANDO HACEN CLICK EN EL MENSAJE
+function returnOwl() {
+  owl.style.display = "block";
+  owl.classList.add("show");
+
+  // limpiar para futuras animaciones
+  setTimeout(() => {
+    owl.classList.remove("show");
+  }, 2000);
+}
