@@ -1,24 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Fecha actual simulada (puedes quitarla para usar la fecha real)
-    const currentDate = new Date(2026, 0, 8); // 8 de enero de 2026
-
-    // Fecha objetivo principal (cumpleaños)
+    // =============================================
+    // CONFIGURACIÓN DE FECHAS
+    // =============================================
     const targetDate = new Date(2026, 4, 19); // 19 de mayo de 2026
-
-    // Fechas de desbloqueo de cartas
+    
     const giftDates = [
         new Date(2026, 1, 14), // Carta 1 → 14 febrero
         new Date(2026, 2, 14), // Carta 2 → 14 marzo
         new Date(2026, 3, 14), // Carta 3 → 14 abril
-        new Date(2026, 4, 14), // Carta 4 → 14 mayo (Varita de Saúco)
-        new Date(2026, 4, 19)  // Carta 5 → 19 mayo (Cumpleaños)
+        new Date(2026, 4, 14), // Carta 4 → 14 mayo
+        new Date(2026, 4, 19)  // Carta 5 → 19 mayo
     ];
 
-
-
-
-    // Elementos del DOM
+    // =============================================
+    // ELEMENTOS DEL DOM
+    // =============================================
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
@@ -47,19 +44,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalTitle = document.getElementById('modal-title');
     const modalSubtitle = document.getElementById('modal-subtitle');
     const modalLetterContent = document.getElementById('modal-letter-content');
-
-    // Cambiar fondo
+    
+    // Fondo
     const bgSelect = document.getElementById('bg-select');
 
-    // Mostrar fecha actual
-    currentDateEl.textContent = currentDate.toLocaleDateString('es-ES', {
+    // =============================================
+    // MOSTRAR FECHA ACTUAL
+    // =============================================
+    const today = new Date();
+    currentDateEl.textContent = today.toLocaleDateString('es-ES', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
         day: 'numeric'
     });
 
-    // Funciones de fondo
+    // =============================================
+    // CAMBIAR FONDO
+    // =============================================
     const backgrounds = [
         {
             name: "Fondo Clásico Howard",
@@ -81,30 +83,26 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "Pergamino Antiguo",
             image: "url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80')"
         }
-        
     ];
 
-    // Cambiar fondo
     bgSelect.addEventListener('change', function () {
         const selectedBg = backgrounds[this.value - 1];
         document.body.style.backgroundImage = selectedBg.image;
     });
 
-    // Contador principal
+    // =============================================
+    // FUNCIÓN PARA ACTUALIZAR CONTADOR PRINCIPAL
+    // =============================================
     function updateCountdown() {
         const now = new Date();
         const timeDiff = targetDate.getTime() - now.getTime();
 
         if (timeDiff <= 0) {
-            // Ya llegó la fecha
             daysEl.textContent = '00';
             hoursEl.textContent = '00';
             minutesEl.textContent = '00';
             secondsEl.textContent = '00';
             countdownText.textContent = '¡Es hoy! ¡Feliz Cumpleaños!';
-
-            // Desbloquear la carta 4 si aún no está desbloqueada
-            checkAndUnlockLetter(3, now);
             return;
         }
 
@@ -118,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         minutesEl.textContent = minutes.toString().padStart(2, '0');
         secondsEl.textContent = seconds.toString().padStart(2, '0');
 
-        // Actualizar texto descriptivo
         countdownText.textContent = `${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos`;
 
         // Verificar y actualizar cartas
@@ -128,43 +125,80 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Verificar si una carta debe desbloquearse
+    // =============================================
+    // FUNCIÓN PARA VERIFICAR Y DESBLOQUEAR CARTAS
+    // =============================================
     function checkAndUnlockLetter(letterIndex, currentTime) {
         const giftDate = giftDates[letterIndex];
         const letterCard = letterCards[letterIndex];
         const letterSeal = letterCard.querySelector('.letter-seal');
         const statusEl = letterStatuses[letterIndex];
+        const icon = letterSeal ? letterSeal.querySelector('i') : null;
 
         if (currentTime >= giftDate) {
-            // Desbloquear carta
+            // CARTA DESBLOQUEADA
             letterCard.classList.add('unlocked');
-            letterSeal.classList.remove('sealed');
-            statusEl.textContent = 'DESBLOQUEADA';
-            statusEl.style.color = '#3c763d';
-
-            // Cambiar cursor y agregar evento de clic
+            
+            if (letterSeal) {
+                letterSeal.classList.remove('sealed');
+                if (icon) {
+                    icon.className = 'fas fa-check';
+                }
+            }
+            
+            if (statusEl) {
+                statusEl.textContent = 'DESBLOQUEADA';
+            }
+            
             letterCard.style.cursor = 'pointer';
-            letterCard.addEventListener('click', function () {
-                openLetterModal(letterIndex);
-            });
+            
+            // Eliminar evento anterior y agregar nuevo
+            letterCard.removeEventListener('click', letterClickHandler);
+            letterCard.addEventListener('click', letterClickHandler);
+            letterCard.dataset.index = letterIndex;
+            
         } else {
-            // Bloquear carta
+            // CARTA BLOQUEADA
             letterCard.classList.remove('unlocked');
-            letterSeal.classList.add('sealed');
-            statusEl.textContent = 'BLOQUEADA';
-            statusEl.style.color = '#a94442';
+            
+            if (letterSeal) {
+                letterSeal.classList.add('sealed');
+                if (icon) {
+                    icon.className = 'fas fa-lock';
+                }
+            }
+            
+            if (statusEl) {
+                statusEl.textContent = 'BLOQUEADA';
+            }
+            
             letterCard.style.cursor = 'default';
+            letterCard.removeEventListener('click', letterClickHandler);
+            delete letterCard.dataset.index;
         }
     }
 
-    // Actualizar contadores pequeños de cada carta
+    // =============================================
+    // MANEJADOR DE CLIC PARA CARTAS
+    // =============================================
+    function letterClickHandler(event) {
+        const card = event.currentTarget;
+        const index = card.dataset.index;
+        if (index !== undefined) {
+            openLetterModal(parseInt(index));
+        }
+    }
+
+    // =============================================
+    // FUNCIÓN PARA ACTUALIZAR CONTADORES PEQUEÑOS
+    // =============================================
     function updateSmallCountdown(letterIndex, currentTime) {
         const giftDate = giftDates[letterIndex];
         const timeDiff = giftDate.getTime() - currentTime.getTime();
         const countdownSmall = countdownsSmall[letterIndex];
 
         if (timeDiff <= 0) {
-            countdownSmall.innerHTML = '<span class="small-days">00</span>d : <span class="small-hours">00</span>h : <span class="small-minutes">00</span>m : <span class="small-seconds">00</span>s';
+            countdownSmall.innerHTML = '00d : 00h : 00m : 00s';
             return;
         }
 
@@ -173,15 +207,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-        countdownSmall.innerHTML = `
-            <span class="small-days">${days.toString().padStart(2, '0')}</span>d : 
-            <span class="small-hours">${hours.toString().padStart(2, '0')}</span>h : 
-            <span class="small-minutes">${minutes.toString().padStart(2, '0')}</span>m : 
-            <span class="small-seconds">${seconds.toString().padStart(2, '0')}</span>s
-        `;
+        countdownSmall.innerHTML = `${days.toString().padStart(2, '0')}d : ${hours.toString().padStart(2, '0')}h : ${minutes.toString().padStart(2, '0')}m : ${seconds.toString().padStart(2, '0')}s`;
     }
 
-    // Abrir modal con contenido de la carta
+    // =============================================
+    // FUNCIÓN PARA ABRIR MODAL
+    // =============================================
     function openLetterModal(letterIndex) {
         const giftDate = giftDates[letterIndex];
         const now = new Date();
@@ -192,24 +223,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const letterTitles = [
-            "Carta de Aceptación #1 - Día del Amor y la Amistad",
-            "Carta de Aceptación #2 - Un Mes de Magia",
-            "Carta de Aceptación #3 - Regalo de Primavera",
-            "Carta de Aceptación Especial"
+            "COMUNICADO #1 - Día del Amor y la Amistad",
+            "COMUNICADO #2 - Un Mes de Magia",
+            "COMUNICADO #3 - Regalo de Primavera",
+            "COMUNICADO #4 - La Varita de Saúco",
+            "🎂 COMUNICADO ESPECIAL - ¡Feliz Cumpleaños Ximena! 🎂"
         ];
 
         const letterSubtitles = [
             "HOGWARTS - Departamento de Regalos Especiales",
             "HOGWARTS - Departamento de Sorpresas Continuas",
             "HOGWARTS - Departamento de Alegría Primaveral",
-            "HOGWARTS - Departamento de Celebración y Magia",
-            "HOGWARTS - Departamento de Sorpresas Continuas"
+            "HOGWARTS - Departamento de Reliquias Mágicas",
+            "HOGWARTS - Departamento de Celebraciones"
         ];
 
         const letterContents = [
-
-    /* ===================== CARTA 1 – 14 FEBRERO ===================== */
-`
+            // CARTA 1
+            `
 <h3>¡Feliz Día de San Valentín!</h3>
 
 <p>
@@ -267,9 +298,8 @@ Atentamente,<br>
         *Tu carta de aceptación a Ravenclaw será entregada junto con tu primer obsequio*
     </span>
 </div>
-`,,
-
-            /* ===================== CARTA 2 – 14 MARZO ===================== */
+`,
+            // CARTA 2
             `
 <h3>Comunicado Académico Oficial</h3>
 
@@ -299,8 +329,7 @@ Atentamente,<br>
 🪄 <strong>Rectorado del HOGWARTS - Academy of Magic and Science</strong>
 </p>
 `,
-
-            /* ===================== CARTA 3 – 14 ABRIL ===================== */
+            // CARTA 3
             `
 <h3>Notificación Estacional de la Academia</h3>
 
@@ -332,8 +361,7 @@ Atentamente,<br>
 🪄 <strong>Rectorado del HOGWARTS - Academy of Magic and Science</strong>
 </p>
 `,
-
-            /* ===================== CARTA 4 – 14 MAYO (VARITA DE SAÚCO) ===================== */
+            // CARTA 4
             `
 <h3>Decreto Supremo del Consejo de la Academia</h3>
 
@@ -366,8 +394,7 @@ Con honor absoluto,<br>
 🪄 Consejo Supremo del HOGWARTS - Academy of Magic and Science
 </p>
 `,
-
-            /* ===================== CARTA 5 – 19 MAYO (CUMPLEAÑOS) ===================== */
+            // CARTA 5
             `
 <h3>Celebración Oficial de la Academia</h3>
 
@@ -401,44 +428,38 @@ Con afecto eterno,<br>
 `
         ];
 
-
         modalTitle.textContent = letterTitles[letterIndex];
         modalSubtitle.textContent = letterSubtitles[letterIndex];
         modalLetterContent.innerHTML = letterContents[letterIndex];
         modal.style.display = 'block';
     }
 
-    // Cerrar modal
+    // =============================================
+    // CERRAR MODAL
+    // =============================================
     closeModal.addEventListener('click', function () {
         modal.style.display = 'none';
     });
 
-    // Cerrar modal al hacer clic fuera
     window.addEventListener('click', function (event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
     });
 
-    // Inicializar contadores
+    // =============================================
+    // INICIALIZAR
+    // =============================================
     updateCountdown();
-
-    // Actualizar cada segundo
     setInterval(updateCountdown, 1000);
 
-    // Mostrar mensaje de bienvenida
-    console.log("¡Página de sorpresa de Howard cargada!");
-    console.log("Fecha objetivo: 19 de marzo de 2026");
-    console.log("Cartas de regalo en: 14/feb, 14/mar, 14/abr y 19/mar");
+    console.log("✨ Página de Hogwarts Academy cargada con magia ✨");
 });
 
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------
-//CONTADOR SEGUIMOS TRABAJANDO //
+// =============================================
+// CONTADOR "SEGUIMOS TRABAJANDO"
+// =============================================
 document.addEventListener("DOMContentLoaded", () => {
-
-    // FECHA OBJETIVO (modifica si quieres)
     const targetDate = new Date("2026-03-14T00:00:00").getTime();
 
     const daysEl = document.getElementById("wt-days");
@@ -473,10 +494,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateTimer, 1000);
 });
 
+// =============================================
+// MÚSICA DE FONDO
+// =============================================
 const music = document.getElementById("bg-music");
-
-// Se activa con el primer clic en cualquier parte
 document.addEventListener("click", () => {
-    music.volume = 0.35; // volumen suave
-    music.play();
+    if (music) {
+        music.volume = 0.35;
+        music.play().catch(e => console.log("Auto-play bloqueado:", e));
+    }
 }, { once: true });
