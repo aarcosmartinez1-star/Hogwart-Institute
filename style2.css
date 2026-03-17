@@ -1,0 +1,309 @@
+/* SECCIÓN FÉNIX - ESTILO BÚHO */
+.fenix-section {
+    background: linear-gradient(135deg, #1a0f0a 0%, #2c1810 100%);
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ff6b35;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.fenix-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 140, 0, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.fenix-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.fenix-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.fenix-title {
+    font-size: 2.5rem;
+    color: #ff9f1c;
+    text-shadow: 0 0 15px #ff6b35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-family: 'Cinzel', serif;
+}
+
+.fenix-icon {
+    font-size: 2.5rem;
+    animation: floatFenix 3s infinite;
+}
+
+@keyframes floatFenix {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.fenix-subtitle {
+    color: #ffb347;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Counter estilo búho */
+.fenix-counter {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.counter-box {
+    background: rgba(255, 107, 53, 0.1);
+    border: 2px solid #ff6b35;
+    border-radius: 20px;
+    padding: 25px 35px;
+    text-align: center;
+    min-width: 180px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.counter-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.counter-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff9f1c;
+    text-shadow: 0 0 20px #ff6b35;
+    display: block;
+    line-height: 1;
+    font-family: 'Cinzel', serif;
+}
+
+.counter-label {
+    color: #ffcc99;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Imagen del Fénix */
+.fenix-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    background: rgba(255, 107, 53, 0.05);
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.fenix-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.fenix-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px #ff6b35);
+    animation: fenixGlow 3s infinite;
+}
+
+@keyframes fenixGlow {
+    0%, 100% { filter: drop-shadow(0 0 20px #ff6b35); }
+    50% { filter: drop-shadow(0 0 40px #ff4500); }
+}
+
+.fenix-flames-effect {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 50px;
+    background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.5) 0%, transparent 70%);
+    animation: flames 2s infinite;
+}
+
+@keyframes flames {
+    0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+    50% { opacity: 0.8; transform: translateX(-50%) scale(1.2); }
+}
+
+/* Mensaje del Fénix */
+.fenix-message {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 30px;
+    border-left: 5px solid #ff6b35;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.message-text {
+    color: #ffcc99;
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-family: 'Cinzel', serif;
+}
+
+.message-date {
+    color: #ff9f1c;
+    font-size: 1rem;
+    display: block;
+    text-align: right;
+}
+
+/* Pergaminos de Fuego */
+.fenix-scrolls {
+    margin-bottom: 40px;
+}
+
+.scrolls-title {
+    color: #ff9f1c;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Cinzel', serif;
+}
+
+.scrolls-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.scroll-card {
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid #ff6b35;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.scroll-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 107, 53, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+
+.scroll-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.scroll-content h4 {
+    color: #ff9f1c;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.scroll-content p {
+    color: #ffcc99;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.scroll-content small {
+    color: #ffb347;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Llamas decorativas */
+.fenix-flames-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.flame {
+    font-size: 2rem;
+    animation: flameFlicker 1.5s infinite;
+}
+
+.flame-1 { animation-delay: 0s; }
+.flame-2 { animation-delay: 0.3s; }
+.flame-3 { animation-delay: 0.6s; }
+.flame-4 { animation-delay: 0.9s; }
+.flame-5 { animation-delay: 1.2s; }
+
+@keyframes flameFlicker {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    25% { transform: scale(1.1) rotate(5deg); opacity: 0.9; }
+    50% { transform: scale(0.9) rotate(-5deg); opacity: 0.8; }
+    75% { transform: scale(1.05) rotate(3deg); opacity: 0.9; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .fenix-title {
+        font-size: 1.8rem;
+    }
+    
+    .counter-box {
+        min-width: 140px;
+        padding: 20px;
+    }
+    
+    .counter-number {
+        font-size: 2.5rem;
+    }
+    
+    .fenix-image-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .fenix-image {
+        width: 150px;
+        height: 150px;
+    }
+}

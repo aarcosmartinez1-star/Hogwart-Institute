@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts - Academy of Magic and Science</title>
     <link rel="stylesheet" href="style1.css">
-    
+    <link rel="stylesheet" href="style2.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,7 +104,7 @@
             <div class="section-title">
                 <h2>Cartas de Aceptación</h2>
                 <!---<p>Regalos especiales que se desbloquearán en fechas específicas</p>-->
-                <p>i notas que las cartas desaparecen, no te preocupes: los elfos mágicos están cumpliendo sus tareas entre susurros y chispas de luz. Así es como la magia de Hogwarts mantiene todo en orden ✨.</p>
+                <p>Los elfos siguen trabajando arduamente para solucionar el problema , sin embargo la magia aveces puede ser mas poredosa que el entendimiento de los elfos.....✨.</p>
 
             </div>
 
@@ -234,7 +235,7 @@
                 </p>
 
                 <div class="video-wrapper">
-                    <iframe id="cineteca-video"   src="https://www.youtube.com/embed/EmsntGGjxiw"   title="Cineteca Mágica"
+                    <iframe id="cineteca-video" src="https://www.youtube.com/embed/EmsntGGjxiw" title="Cineteca Mágica"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
@@ -253,10 +254,10 @@
 
         <!----------------------------------------------------------------------------------------------------------------------------->
         <!--  S O M B R E R O  -->
-        
+
         <div class="selector-section">
             <div class="container">
-               
+
                 <div class="hat-intro" id="hatIntro">
                     <img src="img/CASAS/sombrero.png" alt="Sombrero Seleccionador" class="hat-image">
                     <div class="hat-speech">
@@ -308,11 +309,11 @@
                 </button>
 
                 <div class="selection-result initial-state hidden-magic" id="selectionResult">
-                   
-                    
+
+
                     <div class="reveal-particles" id="revealParticles"></div>
 
-                    
+
                     <div class="question-content">
                         <span class="question-mark">?</span>
                         <h3 class="discover-message">¡Descubre tu casa!</h3>
@@ -322,8 +323,8 @@
                         </p>
                     </div>
 
-                   
-                    
+
+
                     <div class="result-content">
                         <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="result-house-image">
                         <h3 class="result-title">¡Ravenclaw!</h3>
@@ -340,7 +341,7 @@
 
             <div class="particles" id="selectorParticles"></div>
         </div>
-        <script src="sombrero.js"></script> 
+        <script src="sombrero.js"></script>
         <!----------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -525,6 +526,103 @@
 
 
         <!-------------------------------------------------------------------------------------------------------------------->
+        <!-- SECCIÓN FÉNIX DEL ALMA GEMELA (Estilo Búho) -->
+        <section id="fenix" class="fenix-section">
+            <div class="container">
+                <div class="fenix-container">
+                    <!-- Cabecera como la del búho -->
+                    <div class="fenix-header">
+                        <h2 class="fenix-title">
+                            <span class="fenix-icon"> 🐦‍🔥</span>
+                            Fénix del Alma Gemela
+                            <span class="fenix-icon"> 🐦‍🔥</span>
+                        </h2>
+                        <p class="fenix-subtitle">Una llama que renace más fuerte desde el 14 de Agosto de 2025</p>
+                    </div>
+
+                    <!-- Contador principal como el del búho -->
+                    <div class="fenix-counter">
+                        <div class="counter-box">
+                            <span class="counter-number" id="diasJuntos">0</span>
+                            <span class="counter-label">DÍAS DE MAGIA</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-number" id="momentosEspeciales">15</span>
+                            <span class="counter-label">MOMENTOS ✨</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-number" id="amorInfinito">∞</span>
+                            <span class="counter-label">AMOR ETERNO</span>
+                        </div>
+                    </div>
+
+                    <!-- Imagen del Fénix (como el búho) -->
+                    <div class="fenix-image-container">
+                        <div class="fenix-image">
+                            <!-- Puedes reemplazar esta URL con una imagen de Fénix -->
+                            <img src="img/fenix.png" alt="Fénix mágico" class="fenix-img">
+                            <div class="fenix-flames-effect"></div>
+                        </div>
+
+                        <!-- Mensaje flotante como el del búho -->
+                        <div class="fenix-message">
+                            <p class="message-text">"El Fénix que renace cada día con nuestro amor"</p>
+                            <span class="message-date" id="proximaFechaEspecial">Próxima celebración especial</span>
+                        </div>
+                    </div>
+
+                    <!-- Pergaminos del Fénix (como los mensajes del búho) -->
+                    <div class="fenix-scrolls">
+                        <h3 class="scrolls-title">📜 Pergaminos de Fuego</h3>
+
+                        <div class="scrolls-container">
+                            <!-- Pergamino 1 - Aniversario -->
+                            <div class="scroll-card">
+                                <div class="scroll-icon">🔥</div>
+                                <div class="scroll-content">
+                                    <h4>14 de Agosto</h4>
+                                    <p>Nuestra historia comenzó</p>
+                                    <small id="diasAniversario">Hace X días</small>
+                                </div>
+                            </div>
+
+                            <!-- Pergamino 2 - San Valentín -->
+                            <div class="scroll-card">
+                                <div class="scroll-icon">❤️</div>
+                                <div class="scroll-content">
+                                    <h4>14 de Febrero</h4>
+                                    <p>Primer San Valentín juntos</p>
+                                    <small id="diasSanValentin">Próximo en X días</small>
+                                </div>
+                            </div>
+
+                            <!-- Pergamino 3 - Boda -->
+                            <div class="scroll-card">
+                                <div class="scroll-icon">💒</div>
+                                <div class="scroll-content">
+                                    <h4>19 de Mayo</h4>
+                                    <p>Cumpleaños  de  Ximenita</p>
+                                    <small id="diasBoda">Próximo en X días</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Llamas interactivas -->
+                    <div class="fenix-flames-bottom">
+                        <div class="flame flame-1">🔥</div>
+                        <div class="flame flame-2">✨</div>
+                        <div class="flame flame-3">🔥</div>
+                        <div class="flame flame-4">✨</div>
+                        <div class="flame flame-5">🔥</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------------------------------------------------------------------------------------------------------------->
+
         <!-- ===================== -->
 
         <section class="en_proceso_trabajo">
@@ -552,6 +650,7 @@
                     <small>SEG</small>
                 </div>
             </div>
+
 
             <!-- 🚂 TREN REALISTA -->
             <div class="real-train-wrapper">
@@ -612,6 +711,9 @@
 
 
     <audio id="bg-music" loop autoplay>
+        <!---<source src="audio/harrypotter.mp3" type="audio/mpeg"> -->
+        <source src="audio/harrypotter2.MP3">
+
         <source src="audio/harrypotter.mp3" type="audio/mpeg">
     </audio>
     <div id="audio-controls">
@@ -623,6 +725,7 @@
 
 
     <script src="script.js"></script>
+    <script src="script2.js"></script>
 
 
 </body>
