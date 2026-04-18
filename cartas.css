@@ -1,0 +1,562 @@
+/* =========================================== */
+/* CARTAS DE ACEPTACIÓN - HOGWARTS ACADEMY */
+/* =========================================== */
+
+.letters-section {
+    background: linear-gradient(145deg, rgba(26, 43, 62, 0.92), rgba(35, 52, 71, 0.9));
+    border-radius: 25px;
+    padding: 60px 50px;
+    margin-bottom: 80px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7),
+                inset 0 0 50px rgba(138, 109, 59, 0.1);
+    border: 3px solid #8a6d3b;
+    position: relative;
+    overflow: hidden;
+    animation: lettersSectionAppear 1.5s ease-out 1.2s both;
+}
+
+@keyframes lettersSectionAppear {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.letters-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    opacity: 0.08;
+    z-index: 0;
+    animation: parchmentMove 40s linear infinite;
+}
+
+@keyframes parchmentMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+}
+
+.letters-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(240, 217, 163, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(138, 109, 59, 0.05) 0%, transparent 50%);
+    animation: magicDust 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes magicDust {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.letters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* === ESTILOS DE CADA CARTA === */
+.letter-card {
+    background: linear-gradient(145deg, rgba(249, 245, 235, 0.98), rgba(242, 237, 225, 0.97));
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 3px solid #d4c19c;
+    overflow: hidden;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: cardEntrance 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.letter-card:nth-child(1) { animation-delay: 0.2s; }
+.letter-card:nth-child(2) { animation-delay: 0.4s; }
+.letter-card:nth-child(3) { animation-delay: 0.6s; }
+.letter-card:nth-child(4) { animation-delay: 0.8s; }
+.letter-card:nth-child(5) { animation-delay: 1s; }
+
+@keyframes cardEntrance {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    opacity: 0.4;
+    z-index: 0;
+    animation: fibersMove 60s linear infinite;
+}
+
+@keyframes fibersMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 500px 500px; }
+}
+
+.letter-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #f0d9a3, #8a6d3b, #d4c19c, #f0d9a3);
+    background-size: 400% 400%;
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.letter-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(138, 109, 59, 0.3);
+    border-color: #8a6d3b;
+}
+
+.letter-card:hover::after {
+    opacity: 0.3;
+}
+
+/* === CARTA DESBLOQUEADA === */
+.letter-card.unlocked {
+    border-color: #8a6d3b;
+    background: linear-gradient(145deg, rgba(255, 253, 247, 0.99), rgba(250, 247, 237, 0.98));
+    box-shadow: 0 15px 35px rgba(138, 109, 59, 0.4),
+                inset 0 0 30px rgba(240, 217, 163, 0.2);
+    animation: unlockedGlow 2s ease-in-out infinite;
+}
+
+@keyframes unlockedGlow {
+    0%, 100% { box-shadow: 0 15px 35px rgba(138, 109, 59, 0.4), inset 0 0 30px rgba(240, 217, 163, 0.2); }
+    50% { box-shadow: 0 15px 40px rgba(138, 109, 59, 0.6), inset 0 0 40px rgba(240, 217, 163, 0.3); }
+}
+
+/* === SELLO DE LA CARTA === */
+.letter-seal {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #5a5a5a, #3a3a3a, #5a5a5a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: sealFloat 6s ease-in-out infinite;
+}
+
+@keyframes sealFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.letter-seal i {
+    color: #f0d9a3;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: lockPulse 2s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Sello desbloqueado */
+.letter-card.unlocked .letter-seal {
+    background: radial-gradient(circle at 30% 30%, #8a6d3b, #5a4a1e);
+    transform: rotate(15deg);
+}
+
+.letter-card.unlocked .letter-seal i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0d9a3;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: unlockedIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes unlockedIconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); color: #ffffff; text-shadow: 0 0 15px gold; }
+}
+
+/* === CONTENIDO DE LA CARTA === */
+.letter-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-content h3 {
+    font-family: 'Cinzel', serif;
+    color: #8a6d3b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #d4c19c;
+    padding-bottom: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.letter-content h3::after {
+    content: '📜';
+    position: absolute;
+    right: 10px;
+    animation: scrollWiggle 3s ease-in-out infinite;
+}
+
+@keyframes scrollWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.letter-date {
+    color: #7a6b4a;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(138, 109, 59, 0.15), rgba(212, 193, 156, 0.1), rgba(138, 109, 59, 0.15));
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid rgba(138, 109, 59, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-date::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(240, 217, 163, 0.3), transparent);
+    animation: dateShimmer 3s ease-in-out infinite;
+}
+
+@keyframes dateShimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* === ESTADO DE LA CARTA === */
+.letter-status {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Estado BLOQUEADA */
+.letter-status {
+    color: #a94442;
+    background: linear-gradient(90deg, rgba(169, 68, 66, 0.15), rgba(169, 68, 66, 0.1), rgba(169, 68, 66, 0.15));
+    border: 2px solid rgba(169, 68, 66, 0.3);
+}
+
+/* Estado DESBLOQUEADA */
+.letter-card.unlocked .letter-status {
+    color: #3c763d;
+    background: linear-gradient(90deg, rgba(60, 118, 61, 0.2), rgba(60, 118, 61, 0.15), rgba(60, 118, 61, 0.2));
+    border-color: rgba(60, 118, 61, 0.5);
+    animation: unlockedStatusPulse 1.5s ease-in-out infinite;
+}
+
+/* Estado LEÍDA */
+.letter-card.unlocked .letter-status.leida,
+.letter-card.unlocked .letter-status[style*="#8a6d3b"] {
+    color: #8a6d3b;
+    background: linear-gradient(90deg, rgba(138, 109, 59, 0.15), rgba(138, 109, 59, 0.1), rgba(138, 109, 59, 0.15));
+    border-color: rgba(138, 109, 59, 0.3);
+}
+
+@keyframes unlockedStatusPulse {
+    0%, 100% { 
+        box-shadow: 0 0 10px rgba(60, 118, 61, 0.2);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 20px rgba(60, 118, 61, 0.4);
+        transform: scale(1.02);
+    }
+}
+
+/* === CONTADOR PEQUEÑO === */
+.countdown-small {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(90deg, rgba(138, 109, 59, 0.2), rgba(212, 193, 156, 0.15), rgba(138, 109, 59, 0.2));
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    color: #8a6d3b;
+    font-weight: 800;
+    border: 2px solid rgba(138, 109, 59, 0.4);
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.countdown-small::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(240, 217, 163, 0.2), transparent);
+    animation: countdownShimmer 2s ease-in-out infinite;
+}
+
+@keyframes countdownShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Animación para carta disponible */
+@keyframes availablePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(60, 118, 61, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px rgba(60, 118, 61, 0.5);
+    }
+}
+
+.countdown-small[style*="CARTA DISPONIBLE"] {
+    animation: availablePulse 1.5s ease-in-out infinite;
+}
+
+/* === DESCRIPCIÓN === */
+.letter-description {
+    color: #5a523e;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid rgba(138, 109, 59, 0.3);
+    font-style: italic;
+    position: relative;
+}
+
+.letter-description::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: rgba(138, 109, 59, 0.3);
+    font-family: 'Playfair Display', serif;
+}
+
+/* === CARTA DE CUMPLEAÑOS === */
+.letter-card.birthday {
+    background: linear-gradient(145deg, rgba(255, 240, 245, 0.98), rgba(255, 230, 240, 0.97));
+    border: 3px solid #ff6b9d;
+}
+
+.letter-card.birthday::after {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab, #ffb3c1, #ff6b9d);
+}
+
+.letter-card.birthday:hover {
+    border-color: #ff4081;
+}
+
+.letter-card.birthday .letter-content h3 {
+    color: #ff4081;
+    border-bottom-color: #ffb3c1;
+}
+
+.letter-card.birthday .letter-seal {
+    background: radial-gradient(circle at 30% 30%, #ff4081, #ff6b9d, #ff8fab);
+}
+
+.letter-card.birthday .letter-seal i {
+    color: white;
+    animation: giftPulse 2s ease-in-out infinite;
+}
+
+@keyframes giftPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .letters-section {
+        padding: 40px 30px;
+    }
+    
+    .letters-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .letter-card {
+        min-height: 360px;
+    }
+    
+    .letter-content h3 {
+        font-size: 1.7rem;
+    }
+    
+    .letter-status {
+        font-size: 1.1rem;
+    }
+    
+    .letter-seal {
+        width: 70px;
+        height: 70px;
+        top: -15px;
+        right: -15px;
+    }
+    
+    .letter-seal i {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-small {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letters-section {
+        padding: 30px 20px;
+    }
+    
+    .letter-card {
+        padding: 25px;
+    }
+    
+    .letter-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .letter-date {
+        font-size: 0.9rem;
+    }
+    
+    .letter-status {
+        font-size: 1rem;
+        padding: 8px;
+    }
+    
+    .countdown-small {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    
+    .letter-description {
+        font-size: 1rem;
+    }
+}
+/* Estado Bloqueado */
+.letter-card.locked {
+    filter: grayscale(0.8);
+    opacity: 0.7;
+    border: 2px dashed #666;
+    pointer-events: none; /* No se puede interactuar */
+}
+
+.letter-card.locked .status-badge {
+    background: #444;
+    color: #eee;
+}
+
+/* Estado Desbloqueado */
+.letter-card.unlocked {
+    filter: none;
+    opacity: 1;
+    border: 3px solid #8a6d3b;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+.letter-card.unlocked .status-badge {
+    background: #8a6d3b;
+    color: #fff;
+    font-weight: bold;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.countdown-text {
+    font-family: 'Courier New', monospace;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.open-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #8a6d3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    background: #a68b5a;
+}
