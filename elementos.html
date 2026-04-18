@@ -1,0 +1,150 @@
+<!----------------------------------------------------------------------------------------------------------------------------->
+        <!--  S O M B R E R O  -->
+
+        <div class="selector-section">
+            <div class="container">
+
+                <div class="hat-intro" id="hatIntro">
+                    <img src="img/CASAS/sombrero.png" alt="Sombrero Seleccionador" class="hat-image">
+                    <div class="hat-speech">
+                        "¡Hmm, difícil, muy difícil! Veo mucha valentía en ti... y también astucia.
+                        Tienes un gran sentido de la lealtad... pero también una mente ávida de conocimiento.
+                        Mejor que te coloque en..."
+                    </div>
+                    <button class="continue-btn" id="continueBtn">Ver las casas</button>
+                </div>
+
+                <h2 class="selector-title hidden-magic" id="selectorTitle">Sombrero Seleccionador</h2>
+                <p class="selector-subtitle hidden-magic" id="selectorSubtitle">
+                    El sombrero decidirá tu destino en Hogwarts. ¡Observa cómo evalúa tu mente y corazón!
+                </p>
+
+                <div class="houses-container hidden-magic" id="housesContainer">
+                    <div class="house-card gryffindor" data-house="gryffindor">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Gryffindor-Logo.png" alt="Gryffindor" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Gryffindor</h3>
+                    </div>
+                    <div class="house-card slytherin" data-house="slytherin">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Slytherin-Logo.png" alt="Slytherin" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Slytherin</h3>
+                    </div>
+                    <div class="house-card hufflepuff" data-house="hufflepuff">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/Hufflepuf---Logo.png" alt="Hufflepuff" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Hufflepuff</h3>
+                    </div>
+                    <div class="house-card ravenclaw" data-house="ravenclaw">
+                        <div class="house-icon-container">
+                            <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="house-icon">
+                        </div>
+                        <h3 class="house-name">Ravenclaw</h3>
+                    </div>
+                </div>
+
+                <div class="selection-counter hidden-magic" id="selectionCounter">
+                    El sombrero está pensando: <span class="counter-number">0</span>/10
+                </div>
+
+                <button class="start-selection-btn hidden-magic" id="startSelection">
+                    Comenzar Selección
+                </button>
+
+                <div class="selection-result initial-state hidden-magic" id="selectionResult">
+
+
+                    <div class="reveal-particles" id="revealParticles"></div>
+
+
+                    <div class="question-content">
+                        <span class="question-mark">?</span>
+                        <h3 class="discover-message">¡Descubre tu casa!</h3>
+                        <p class="discover-subtitle">
+                            Haz clic en "Comenzar Selección" para que el Sombrero Seleccionador
+                            determine a qué casa de Hogwarts perteneces.
+                        </p>
+                    </div>
+
+
+
+                    <div class="result-content">
+                        <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="result-house-image">
+                        <h3 class="result-title">¡Ravenclaw!</h3>
+                        <p class="result-text">
+                            ¡Felicidades! El Sombrero Seleccionador ha decidido que perteneces a Ravenclaw.
+                            Tu inteligencia, creatividad y sabiduría te hacen un miembro perfecto de esta casa.
+                            En la Torre de Ravenclaw, donde reside el águila, encontrarás compañeros que valoran
+                            el aprendizaje y la curiosidad tanto como tú.
+                        </p>
+                        <button class="reset-btn" id="resetSelection">Volver a intentar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particles" id="selectorParticles"></div>
+        </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+        <!--  Q U I Z Z H O G W A R T S   -->
+
+
+         <section class="quiz-section">
+            <div class="section-title">
+                <h2>📚 El Desafío de Hogwarts</h2>
+                <p>¿Cuánto sabes sobre el mundo mágico? Responde las preguntas y demuestra tu sabiduría</p>
+            </div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Pantalla de inicio -->
+                <div class="quiz-start" id="quizStart">
+                    <div class="quiz-icon">🪄</div>
+                    <h3>¿Te atreves a aceptar el desafío?</h3>
+                    <p>10 preguntas sobre el mundo de Harry Potter</p>
+                    <button class="quiz-start-btn" id="startQuizBtn">
+                        <span>✨ Comenzar Desafío ✨</span>
+                    </button>
+                    <div class="quiz-rules">
+                        <p>📜 Reglas del Desafío:</p>
+                        <ul>
+                            <li>🔮 10 preguntas mágicas</li>
+                            <li>⭐ +10 puntos por respuesta correcta</li>
+                            <li>🏆 100 puntos = ¡Sabiduría de Ravenclaw!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pantalla de pregunta -->
+                <div class="quiz-question hidden-magic" id="quizQuestion">
+                    <div class="quiz-header">
+                        <div class="quiz-score">🏆 Puntos: <span id="quizScore">0</span></div>
+                        <div class="quiz-progress">📜 Pregunta <span id="currentQuestion">1</span>/<span
+                                id="totalQuestions">10</span></div>
+                    </div>
+                    <div class="quiz-question-text" id="questionText"></div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <div class="quiz-feedback hidden-magic" id="quizFeedback"></div>
+                </div>
+
+                <!-- Pantalla de resultados -->
+                <div class="quiz-result hidden-magic" id="quizResult">
+                    <div class="result-icon" id="resultIcon">🏆</div>
+                    <h3 id="resultTitle">¡Felicidades!</h3>
+                    <p id="resultMessage"></p>
+                    <div class="result-score">
+                        <span class="score-label">Tu puntuación:</span>
+                        <span class="score-value" id="finalScore">0</span>
+                        <span class="score-max">/ 100</span>
+                    </div>
+                    <div class="result-badge" id="resultBadge"></div>
+                    <button class="quiz-restart-btn" id="restartQuizBtn">
+                        <span>🔄 Jugar de nuevo</span>
+                    </button>
+                </div>
+            </div>
+        </section>

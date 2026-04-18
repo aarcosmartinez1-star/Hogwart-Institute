@@ -1,0 +1,16 @@
+/* Añade a tu style1.css */
+
+/* Efecto de brillo para la varita */
+.magic-cursor-glow {
+    animation: cursorGlow 2s ease-in-out infinite;
+}
+
+@keyframes cursorGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(240, 217, 163, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    }
+}
+

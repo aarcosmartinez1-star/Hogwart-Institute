@@ -7,21 +7,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hogwarts - Academy of Magic and Science</title>
+
+    <!-- Estilos Base y Temáticos -->
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="cartas.css">
     <link rel="stylesheet" href="fenix.css">
+    <link rel="stylesheet" href="styles2.css">
+    //ELEMENTOS CAMBIANTES MES CON MES
+    <link rel="stylesheet" href="/elementos/quizzharry.css">
 
+    <link rel="stylesheet" href="/elementos/ravenclaw.css">
 
+    <!-- Fuentes Mágicas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- Selector de Fondo Mágico -->
     <div id="background-selector">
         <label for="bg-select">Cambiar fondo:</label>
         <select id="bg-select">
@@ -33,6 +43,7 @@
         </select>
     </div>
 
+    <!-- Encabezado Principal -->
     <header class="main-header">
         <div class="logo-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Hogwarts-Crest.png" alt="Escudo Hogwarts"
@@ -43,73 +54,56 @@
     </header>
 
     <main class="content">
-        <section class="countdown-section">
-            <div class="section-title">
-                <h2>Próxima Ceremonia de Admisión</h2>
-                <p>19 de Marzo, 2026</p>
+
+        <!-- SECCIÓN 1: CUENTA REGRESIVA Y MENSAJE DE ACEPTACIÓN -->
+<section class="countdown-section">
+    <div class="section-title">
+        <h2>Próxima Ceremonia de Admisión</h2>
+        <p>19 de Marzo, 2026</p>
+    </div>
+
+    <div class="countdown-container">
+        <div class="countdown-box"><span id="days" class="countdown-number">00</span><span
+                class="countdown-label">DÍAS</span></div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-box"><span id="hours" class="countdown-number">00</span><span
+                class="countdown-label">HORAS</span></div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-box"><span id="minutes" class="countdown-number">00</span><span
+                class="countdown-label">MINUTOS</span></div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-box"><span id="seconds" class="countdown-number">00</span><span
+                class="countdown-label">SEGUNDOS</span></div>
+    </div>
+
+    <div class="countdown-message">
+        <p>Faltan <span id="countdown-text"></span> para la gran sorpresa</p>
+        <p class="special-message">¡Felicidades Ximena Garcia Mendienta, has sido seleccionada!</p>
+        
+        <!-- Contenido con imagen a la derecha y texto a la izquierda -->
+        <div class="acceptance-content">
+            <div class="acceptance-text">
+                <h3>¡Felicidades, Ximena García Mendieta!</h3>
+                <p>Nos complace informarte que has sido oficialmente seleccionada para formar parte de Hogwarts Academy – Academy of Magic and Science.</p>
+                <p>Tras una cuidadosa observación de tu esencia, tu carácter y tu extraordinaria capacidad para ver el mundo con sensibilidad y valentía, el Consejo de Magia ha determinado que posees las cualidades necesarias para emprender este camino.</p>
+                <p>A partir de ahora, las puertas de nuestra Academy se abren para ti, donde el conocimiento y la magia caminan juntos, y donde cada estudiante escribe su propia historia.</p>
+                <p>Tu carta ha llegado tal como estaba destinada a hacerlo. La magia siempre encuentra a quienes creen en ella.</p>
+                <p class="honor-message">Te esperamos con honor y orgullo.</p>
             </div>
-
-            <div class="countdown-container">
-                <div class="countdown-box">
-                    <span id="days" class="countdown-number">00</span>
-                    <span class="countdown-label">DÍAS</span>
-                </div>
-                <div class="countdown-separator">:</div>
-                <div class="countdown-box">
-                    <span id="hours" class="countdown-number">00</span>
-                    <span class="countdown-label">HORAS</span>
-                </div>
-                <div class="countdown-separator">:</div>
-                <div class="countdown-box">
-                    <span id="minutes" class="countdown-number">00</span>
-                    <span class="countdown-label">MINUTOS</span>
-                </div>
-                <div class="countdown-separator">:</div>
-                <div class="countdown-box">
-                    <span id="seconds" class="countdown-number">00</span>
-                    <span class="countdown-label">SEGUNDOS</span>
-                </div>
+            <div class="acceptance-image">
+                <img src="img/ximena.jpeg" alt="Hogwarts Academy - Carta mágica y caldero" class="magic-letter-img">
+                <div class="image-glow"></div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="countdown-message">
-                <p>Faltan <span id="countdown-text"></span> para la gran sorpresa</p>
-                <p class="special-message">¡Felicidades Ximena Garcia Mendienta, has sido seleccionada!</p>
-
-                <div class="acceptance-message">
-                    <p>¡Felicidades, Ximena García Mendieta!</p>
-                    <p>
-                        Nos complace informarte que has sido oficialmente seleccionada para formar parte de
-                        Hogwarts Academy – Academy of Magic and Science.
-                    </p>
-                    <p>
-                        Tras una cuidadosa observación de tu esencia, tu carácter y tu extraordinaria capacidad
-                        para ver el mundo con sensibilidad y valentía, el Consejo de Magia ha determinado que
-                        posees las cualidades necesarias para emprender este camino.
-                    </p>
-                    <p>
-                        A partir de ahora, las puertas de nuestra Academy se abren para ti, donde el conocimiento
-                        y la magia caminan juntos, y donde cada estudiante escribe su propia historia.
-                    </p>
-                    <p>
-                        Tu carta ha llegado tal como estaba destinada a hacerlo. La magia siempre encuentra a
-                        quienes creen en ella.
-                    </p>
-                    <p>Te esperamos con honor y orgullo.</p>
-                </div>
-            </div>
-
-
-        </section>
-
-
-
+        <!-- SECCIÓN 2: CARTAS DE ACEPTACIÓN (TEMPORIZADAS) -->
         <section class="letters-section">
             <div class="section-title">
                 <h2>Cartas de Aceptación</h2>
-                <!---<p>Regalos especiales que se desbloquearán en fechas específicas</p>-->
-                <p>¡Enhorabuena! Los elfos domésticos han restaurado el flujo de magia en los pergaminos. Los antiguos
+                <p>¡Enhorabuena! Los elfos han restaurado el flujo de magia en los pergaminos. Los antiguos
                     encantamientos persisten, entrelazándose con fuerza renovada en cada sobre.</p>
-
             </div>
 
             <div class="letters-container">
@@ -189,170 +183,258 @@
         </section>
 
 
-
-        <!-- ===================== -->
-        <!-- LECHUZA MENSAJERA -->
-        <!-- ===================== -->
+        <!-- SECCIÓN 3: LECHUZA MENSAJERA -->
         <section class="owl-section">
             <div class="section-title">
                 <h2>🦉 Lechuza Mensajera</h2>
                 <p>Tu mensaje viajará con magia hasta su destino</p>
             </div>
-
             <div class="owl-wrapper">
                 <div class="owl-box">
                     <div class="owl-glow"></div>
                     <img src="img/lechuza.png" id="owl" alt="Lechuza Mensajera">
                 </div>
-
                 <div class="owl-form">
                     <h3>Escribe tu pergamino</h3>
                     <textarea id="owlMessage" placeholder="Querida Ximena, la magia de hoy es..."></textarea>
-                    <button id="sendOwlBtn">
-                        ✨ Enviar con la Lechuza
-                    </button>
+                    <button id="sendOwlBtn">✨ Enviar con la Lechuza</button>
                 </div>
             </div>
-
             <div class="received-messages">
                 <h3>📜 Pergaminos Recibidos</h3>
                 <div id="messageBoard"></div>
-
             </div>
-
         </section>
 
-        <!-- Aquí conectas la magia del JavaScrgiipt -->
-        <script src="lechuza2.js"></script>
-
-
-
-        <!-- =================================================================================================-->
-
-
-        <!-- SECCIÓN: CINETECA MÁGICA -->
+        <!-- SECCIÓN 4: CINETECA MÁGICA -->
         <section id="cineteca-magica" class="cineteca-section hidden-magic">
             <div class="container">
                 <h2 class="cineteca-title">🎥 Cineteca Mágica</h2>
-                <p class="cineteca-desc">
-                    La magia también se vive en pantalla. Disfruta esta proyección especial.
-                </p>
-
+                <p class="cineteca-desc">La magia también se vive en pantalla. Disfruta esta proyección especial.</p>
                 <div class="video-wrapper">
                     <iframe id="cineteca-video" src="https://www.youtube.com/embed/EmsntGGjxiw" title="Cineteca Mágica"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-
-                    <button id="playMagicBtn" class="magic-btn">
-                        ✨ Iniciar Proyección
-                    </button>
-                </div>
-        </section>
-
-        <script src="cineteca.js"></script>
-
-
-        <!-- =================================================================================================-->
-
-        <!----------------------------------------------------------------------------------------------------------------------------->
-        <!--  S O M B R E R O  -->
-
-        <div class="selector-section">
-            <div class="container">
-
-                <div class="hat-intro" id="hatIntro">
-                    <img src="img/CASAS/sombrero.png" alt="Sombrero Seleccionador" class="hat-image">
-                    <div class="hat-speech">
-                        "¡Hmm, difícil, muy difícil! Veo mucha valentía en ti... y también astucia.
-                        Tienes un gran sentido de la lealtad... pero también una mente ávida de conocimiento.
-                        Mejor que te coloque en..."
-                    </div>
-                    <button class="continue-btn" id="continueBtn">Ver las casas</button>
-                </div>
-
-                <h2 class="selector-title hidden-magic" id="selectorTitle">Sombrero Seleccionador</h2>
-                <p class="selector-subtitle hidden-magic" id="selectorSubtitle">
-                    El sombrero decidirá tu destino en Hogwarts. ¡Observa cómo evalúa tu mente y corazón!
-                </p>
-
-                <div class="houses-container hidden-magic" id="housesContainer">
-                    <div class="house-card gryffindor" data-house="gryffindor">
-                        <div class="house-icon-container">
-                            <img src="img/CASAS/Gryffindor-Logo.png" alt="Gryffindor" class="house-icon">
-                        </div>
-                        <h3 class="house-name">Gryffindor</h3>
-                    </div>
-                    <div class="house-card slytherin" data-house="slytherin">
-                        <div class="house-icon-container">
-                            <img src="img/CASAS/Slytherin-Logo.png" alt="Slytherin" class="house-icon">
-                        </div>
-                        <h3 class="house-name">Slytherin</h3>
-                    </div>
-                    <div class="house-card hufflepuff" data-house="hufflepuff">
-                        <div class="house-icon-container">
-                            <img src="img/CASAS/Hufflepuf---Logo.png" alt="Hufflepuff" class="house-icon">
-                        </div>
-                        <h3 class="house-name">Hufflepuff</h3>
-                    </div>
-                    <div class="house-card ravenclaw" data-house="ravenclaw">
-                        <div class="house-icon-container">
-                            <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="house-icon">
-                        </div>
-                        <h3 class="house-name">Ravenclaw</h3>
-                    </div>
-                </div>
-
-                <div class="selection-counter hidden-magic" id="selectionCounter">
-                    El sombrero está pensando: <span class="counter-number">0</span>/10
-                </div>
-
-                <button class="start-selection-btn hidden-magic" id="startSelection">
-                    Comenzar Selección
-                </button>
-
-                <div class="selection-result initial-state hidden-magic" id="selectionResult">
-
-
-                    <div class="reveal-particles" id="revealParticles"></div>
-
-
-                    <div class="question-content">
-                        <span class="question-mark">?</span>
-                        <h3 class="discover-message">¡Descubre tu casa!</h3>
-                        <p class="discover-subtitle">
-                            Haz clic en "Comenzar Selección" para que el Sombrero Seleccionador
-                            determine a qué casa de Hogwarts perteneces.
-                        </p>
-                    </div>
-
-
-
-                    <div class="result-content">
-                        <img src="img/CASAS/RavenclawLogo.png" alt="Ravenclaw" class="result-house-image">
-                        <h3 class="result-title">¡Ravenclaw!</h3>
-                        <p class="result-text">
-                            ¡Felicidades! El Sombrero Seleccionador ha decidido que perteneces a Ravenclaw.
-                            Tu inteligencia, creatividad y sabiduría te hacen un miembro perfecto de esta casa.
-                            En la Torre de Ravenclaw, donde reside el águila, encontrarás compañeros que valoran
-                            el aprendizaje y la curiosidad tanto como tú.
-                        </p>
-                        <button class="reset-btn" id="resetSelection">Volver a intentar</button>
-                    </div>
+                        allowfullscreen></iframe>
+                    <button id="playMagicBtn" class="magic-btn">✨ Iniciar Proyección</button>
                 </div>
             </div>
+        </section>
 
-            <div class="particles" id="selectorParticles"></div>
-        </div>
-        <!----------------------------------------------------------------------------------------------------------------------------->
+        <!-- SECCIÓN 5 : VARIADO  -->
+        <!-- ============================================= -->
+        <!-- SECCIÓN: CASA RAVENCLAW - EDICIÓN ESTELAR    -->
+        <!-- ============================================= -->
+        <section class="ravenclaw-section-v2">
+
+            <!-- Fondo de estrellas animadas -->
+            <div class="stars-canvas" id="ravenclaw-stars"></div>
+
+            <div class="ravenclaw-wrapper">
+
+                <!-- Encabezado Flotante -->
+                <div class="ravenclaw-header-v2">
+                    <div class="header-glow"></div>
+
+                    <!-- ÁGUILA PNG - REEMPLAZO DEL EMOJI -->
+                    <div class="eagle-image-container">
+                        <img src="img/CASAS/RavenclawLogo.png"
+                            alt="Águila de Ravenclaw" class="eagle-png">
+                        <div class="eagle-glow-effect"></div>
+                    </div>
+
+                    <h2 class="house-title-v2">
+                        <span class="title-line">Casa</span>
+                        <span class="title-main">RAVENCLAW</span>
+                    </h2>
+                    <p class="subtitle-v2">Donde el ingenio brilla como las estrellas</p>
+
+                    <!-- Badge de Ximena -->
+                    <div class="ximena-badge-v2">
+                        <span class="badge-icon">✨</span>
+                        <span class="badge-text">Ximena García Mendieta</span>
+                        <span class="badge-icon">✨</span>
+                    </div>
+                </div>
+
+                <!-- Malla de Tarjetas Animadas -->
+                <div class="ravenclaw-grid-v2">
+
+                    <!-- Tarjeta 1: Fundadora -->
+                    <div class="raven-card-v2" data-card="1">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">👑</div>
+                                <h3>Rowena Ravenclaw</h3>
+                                <p>Fundadora</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>"Una mente sin límites"</h4>
+                                <p>Valoraba el aprendizaje por encima de todo. Creó la diadema que otorgaba sabiduría.
+                                </p>
+                                <div class="card-stat">Inteligencia: ∞</div>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+
+                    <!-- Tarjeta 2: Elementos -->
+                    <div class="raven-card-v2" data-card="2">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">🌙</div>
+                                <h3>Elementos</h3>
+                                <p>Azul & Bronce</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>Símbolos Sagrados</h4>
+                                <ul class="card-list">
+                                    <li>
+                                        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Águila"
+                                            class="mini-icon">
+                                        Animal: Águila
+                                    </li>
+                                    <li>💨 Elemento: Aire</li>
+                                    <li>💎 Gema: Zafiro</li>
+                                    <li>⭐ Constelación: Aquila</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+
+                    <!-- Tarjeta 3: Cualidades -->
+                    <div class="raven-card-v2" data-card="3">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">🧠</div>
+                                <h3>Cualidades</h3>
+                                <p>Mente Brillante</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>Rasgos Ravenclaw</h4>
+                                <div class="traits-cloud">
+                                    <span>Curiosidad</span>
+                                    <span>Creatividad</span>
+                                    <span>Sabiduría</span>
+                                    <span>Originalidad</span>
+                                    <span>Individualidad</span>
+                                    <span>Ingenio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+
+                    <!-- Tarjeta 4: Sala Común -->
+                    <div class="raven-card-v2" data-card="4">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">🗼</div>
+                                <h3>Torre Ravenclaw</h3>
+                                <p>Sala Común</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>El Nido del Águila</h4>
+                                <p>Ubicada en la torre oeste. Para entrar debes resolver un acertijo del aldabón de
+                                    bronce.</p>
+                                <p class="view-note">🌟 Las mejores vistas del castillo</p>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+
+                    <!-- Tarjeta 5: Fantasma -->
+                    <div class="raven-card-v2" data-card="5">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">👻</div>
+                                <h3>La Dama Gris</h3>
+                                <p>Fantasma de la Casa</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>Helena Ravenclaw</h4>
+                                <p>Hija de Rowena. Robó la diadema de su madre por celos y orgullo. Ahora guía a los
+                                    estudiantes con misteriosa sabiduría.</p>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+
+                    <!-- Tarjeta 6: Dato Curioso -->
+                    <div class="raven-card-v2" data-card="6">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="card-icon-v2">🔮</div>
+                                <h3>¿Sabías que...?</h3>
+                                <p>Dato Mágico</p>
+                                <span class="hover-hint">Descubre más</span>
+                            </div>
+                            <div class="card-back">
+                                <h4>Curiosidades</h4>
+                                <p>Ravenclaw es la única casa cuya entrada no requiere contraseña, sino responder un
+                                    acertijo lógico. ¡Fomenta el aprendizaje constante!</p>
+                            </div>
+                        </div>
+                        <div class="card-aura"></div>
+                    </div>
+                </div>
+
+                <!-- Mensaje Estelar Personalizado -->
+                <div class="stellar-message">
+                    <div class="message-container-v2">
+                        <div class="message-stars">
+                            <span class="star star1"></span>
+                            <span class="star star2"></span>
+                            <span class="star star3"></span>
+                        </div>
+                        <div class="message-content-v2">
+                            <div class="quill-icon">🪶</div>
+                            <h3>Querida Ximena,</h3>
+                            <div class="message-body-v2">
+                                <p>El universo conspiró para que tu nombre resonara en la Torre de Ravenclaw. Tu forma
+                                    de ver el mundo —con asombro en un museo, con calma en un lago, con pasión en un
+                                    concierto— es la prueba de una mente que no solo acumula conocimiento, sino que lo
+                                    transforma en <strong>magia verdadera</strong>.</p>
+                                <p>Que las estrellas guíen tu ingenio y el viento eleve tus sueños.</p>
+                            </div>
+                            <div class="signature-v2">
+                                <span class="sig-line"></span>
+                                <span class="sig-name">El Sombrero Seleccionador</span>
+                                <span class="sig-line"></span>
+                            </div>
+                        </div>
+                        <div class="message-stars">
+                            <span class="star star4"></span>
+                            <span class="star star5"></span>
+                            <span class="star star6"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra de Progreso de Sabiduría -->
+                <div class="wisdom-bar-container">
+                    <div class="wisdom-label">
+                        <span>📊 Nivel de Sabiduría Ravenclaw</span>
+                        <span class="wisdom-value" id="wisdom-percent">98%</span>
+                    </div>
+                    <div class="wisdom-bar-bg">
+                        <div class="wisdom-bar-fill" id="wisdom-bar-fill"></div>
+                        <div class="wisdom-sparkles"></div>
+                    </div>
+                    <p class="wisdom-note">¡A un paso de la sabiduría absoluta!</p>
+                </div>
+
+            </div>
+        </section>
 
 
-
-        <!-- ===================== -->
-        <!-- ÁLBUM DE RECUERDOS -->
-        <!-- ===================== -->
-
+        <!-- SECCIÓN 6: ÁLBUM DE RECUERDOS -->
         <section class="album-section">
             <div class="section-title">
                 <h2>Álbum de Recuerdos</h2>
@@ -536,177 +618,85 @@
         </section>
 
 
-        <!-------------------------------------------------------------------------------------------------------------------->
-        <!-- SECCIÓN FÉNIX DEL ALMA GEMELA (Estilo Búho) -->
+        <!-- SECCIÓN 7: FÉNIX DEL ALMA GEMELA -->
         <section id="fenix" class="fenix-section">
             <div class="container">
                 <div class="fenix-container">
-                    <!-- Cabecera como la del búho -->
                     <div class="fenix-header">
-                        <h2 class="fenix-title">
-                            <span class="fenix-icon"> 🐦‍🔥</span>
-                            Fénix del Alma Gemela
-                            <span class="fenix-icon"> 🐦‍🔥</span>
-                        </h2>
+                        <h2 class="fenix-title"><span class="fenix-icon">🐦‍🔥</span> Fénix del Alma Gemela <span
+                                class="fenix-icon">🐦‍🔥</span></h2>
                         <p class="fenix-subtitle">Una llama que renace más fuerte desde el 14 de Agosto de 2025</p>
                     </div>
-
-                    <!-- Contador principal como el del búho -->
                     <div class="fenix-counter">
-                        <div class="counter-box">
-                            <span class="counter-number" id="diasJuntos">0</span>
-                            <span class="counter-label">DÍAS DE MAGIA</span>
-                        </div>
-                        <div class="counter-box">
-                            <span class="counter-number" id="momentosEspeciales">15</span>
-                            <span class="counter-label">MOMENTOS ✨</span>
-                        </div>
-                        <div class="counter-box">
-                            <span class="counter-number" id="amorInfinito">∞</span>
-                            <span class="counter-label">AMOR ETERNO</span>
-                        </div>
+                        <div class="counter-box"><span class="counter-number" id="diasJuntos">0</span><span
+                                class="counter-label">DÍAS DE MAGIA</span></div>
+                        <div class="counter-box"><span class="counter-number" id="momentosEspeciales">15</span><span
+                                class="counter-label">MOMENTOS ✨</span></div>
+                        <div class="counter-box"><span class="counter-number" id="amorInfinito">∞</span><span
+                                class="counter-label">AMOR ETERNO</span></div>
                     </div>
-
-                    <!-- Imagen del Fénix (como el búho) -->
                     <div class="fenix-image-container">
                         <div class="fenix-image">
-                            <!-- Puedes reemplazar esta URL con una imagen de Fénix -->
                             <img src="img/fenix.png" alt="Fénix mágico" class="fenix-img">
                             <div class="fenix-flames-effect"></div>
                         </div>
-
-                        <!-- Mensaje flotante como el del búho -->
                         <div class="fenix-message">
                             <p class="message-text">"El Fénix que renace cada día con nuestro amor"</p>
                             <span class="message-date" id="proximaFechaEspecial">Próxima celebración especial</span>
                         </div>
                     </div>
-
-                    <!-- Pergaminos del Fénix (como los mensajes del búho) -->
-                    <div class="fenix-scrolls">
-                        <h3 class="scrolls-title">📜 Pergaminos de Fuego</h3>
-
-                        <div class="scrolls-container">
-                            <!-- Pergamino 1 - Aniversario -->
-                            <div class="scroll-card">
-                                <div class="scroll-icon">🔥</div>
-                                <div class="scroll-content">
-                                    <h4>14 de Agosto</h4>
-                                    <p>Nuestra historia comenzó</p>
-                                    <small id="diasAniversario">Hace X días</small>
-                                </div>
-                            </div>
-
-                            <!-- Pergamino 2 - San Valentín -->
-                            <div class="scroll-card">
-                                <div class="scroll-icon">❤️</div>
-                                <div class="scroll-content">
-                                    <h4>14 de Febrero</h4>
-                                    <p>Primer San Valentín juntos</p>
-                                    <small id="diasSanValentin">Próximo en X días</small>
-                                </div>
-                            </div>
-
-                            <!-- Pergamino 3 - Boda -->
-                            <div class="scroll-card">
-                                <div class="scroll-icon">💒</div>
-                                <div class="scroll-content">
-                                    <h4>19 de Mayo</h4>
-                                    <p>Cumpleaños de Ximenita</p>
-                                    <small id="diasBoda">Próximo en X días</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Llamas interactivas -->
-                    <div class="fenix-flames-bottom">
-                        <div class="flame flame-1">🔥</div>
-                        <div class="flame flame-2">✨</div>
-                        <div class="flame flame-3">🔥</div>
-                        <div class="flame flame-4">✨</div>
-                        <div class="flame flame-5">🔥</div>
-                    </div>
+                    <!-- Pergaminos y Llamas del Fénix -->
                 </div>
             </div>
         </section>
 
-
-        <!-------------------------------------------------------------------------------------------------------------------->
-
-        <!-- ===================== -->
-
+        <!-- SECCIÓN 8: TRABAJO EN PROCESO (CON TREN) -->
         <section class="en_proceso_trabajo">
-
             <div class="section-title">
                 <h2>Seguimos Trabajando...</h2>
                 <p>La magia se está preparando. Muy pronto habrá novedades.</p>
             </div>
-
             <div class="work-timer">
-                <div class="time-box">
-                    <span id="wt-days">00</span>
-                    <small>DÍAS</small>
-                </div>
-                <div class="time-box">
-                    <span id="wt-hours">00</span>
-                    <small>HORAS</small>
-                </div>
-                <div class="time-box">
-                    <span id="wt-minutes">00</span>
-                    <small>MIN</small>
-                </div>
-                <div class="time-box">
-                    <span id="wt-seconds">00</span>
-                    <small>SEG</small>
-                </div>
+                <div class="time-box"><span id="wt-days">00</span><small>DÍAS</small></div>
+                <div class="time-box"><span id="wt-hours">00</span><small>HORAS</small></div>
+                <div class="time-box"><span id="wt-minutes">00</span><small>MIN</small></div>
+                <div class="time-box"><span id="wt-seconds">00</span><small>SEG</small></div>
             </div>
-
-
             <!-- 🚂 TREN REALISTA -->
             <div class="real-train-wrapper">
                 <div class="real-train">
+                    <!-- Vagones y Locomotora -->
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
                     <img src="img/LOCOMOTORA/vagon.png" class="wagon-img" alt="Vagón">
-
-                    <img src="img/LOCOMOTORA/locomotora1.png" class="wagon-img" alt="Vagón">
-
+                    <img src="img/LOCOMOTORA/locomotora1.png" class="wagon-img" alt="Locomotora">
                 </div>
-
-                <!-- ✨ CHISPAS -->
+                <!-- Chispas mágicas -->
                 <span class="magic-spark"></span>
                 <span class="magic-spark"></span>
                 <span class="magic-spark"></span>
                 <span class="magic-spark"></span>
             </div>
-
         </section>
 
-
-
-
-
+        <!-- SECCIÓN 9: INSTRUCCIONES FINALES -->
         <section class="instructions">
             <h3>Instrucciones</h3>
-            <p>
-                Cada carta representa un regalo que recibirás en la fecha indicada.
-            </p>
+            <p>Cada carta representa un regalo que recibirás en la fecha indicada.</p>
             <p><strong>Fecha de ingreso:</strong> <span id="current-date"></span></p>
         </section>
 
-
-
-
     </main>
 
+    <!-- Pie de Página -->
     <footer>
         <p>Hogwarts Academy • Departamento de Sorpresas y Magia Especial</p>
         <p>© 2026 - Todos los derechos reservados</p>
     </footer>
 
+    <!-- Modal para Cartas -->
     <div class="modal" id="letterModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -720,24 +710,28 @@
         </div>
     </div>
 
-
+    <!-- Audio de Fondo -->
     <audio id="bg-music" loop autoplay>
-        <!---<source src="audio/harrypotter.mp3" type="audio/mpeg"> -->
-        <source src="audio/harrypotter2.MP3">
-
+        <source src="audio/harrypotter2.MP3" type="audio/mpeg">
         <source src="audio/harrypotter.mp3" type="audio/mpeg">
     </audio>
     <div id="audio-controls">
         <button id="play-pause-btn"><i class="fas fa-play"></i> Reproducir Música</button>
     </div>
 
-
-
-
-
+    <!-- Scripts Mágicos -->
+    <script src="lechuza2.js"></script>
+    <script src="cineteca.js"></script>
     <script src="hogwarts.js"></script>
     <script src="cartas.js"></script>
     <script src="fenix.js"></script>
+    <script src="hogtwarts-style.js"></script>
+
+    //ELEMENTOS CAMBIANTES MES CON MES
+    <script src="/elementos/quizzharry.js"></script>
+    <script src="/elementos/ravenclaw.js"></script>
+
+
 
 
 </body>
